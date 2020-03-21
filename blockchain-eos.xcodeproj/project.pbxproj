@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07770A261D94AD828B4E00B3 /* Pods_blockchain_eos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F5B019575CFA0FEA7A51FD /* Pods_blockchain_eos.framework */; };
 		5019C2822424885200B258F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5019C2792424885200B258F8 /* LaunchScreen.storyboard */; };
 		5019C2832424885200B258F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5019C27A2424885200B258F8 /* Main.storyboard */; };
 		5019C2862424889300B258F8 /* RecentBlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2852424889300B258F8 /* RecentBlocksViewController.swift */; };
@@ -27,9 +28,13 @@
 		5019C2AE242664B400B258F8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2AD242664B400B258F8 /* BaseViewModel.swift */; };
 		5019C2B1242674A400B258F8 /* EosBlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */; };
 		5019C2B524268FEF00B258F8 /* BlockDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2B424268FEF00B258F8 /* BlockDetailsViewModel.swift */; };
+		5019C2BF2426B7B000B258F8 /* RecentBlocksViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5B92424373D00E0F0E9 /* RecentBlocksViewControllerUITests.swift */; };
+		5019C2C02426B7BF00B258F8 /* MockEosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2BC2426B56900B258F8 /* MockEosApi.swift */; };
+		5019C2C32426B8AD00B258F8 /* blockchain_eosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2C22426B8AC00B258F8 /* blockchain_eosUITests.swift */; };
 		50CCB5A12424373D00E0F0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB5A02424373D00E0F0E9 /* Assets.xcassets */; };
-		50CCB5AF2424373D00E0F0E9 /* blockchain_eosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5AE2424373D00E0F0E9 /* blockchain_eosTests.swift */; };
-		50CCB5BA2424373D00E0F0E9 /* blockchain_eosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5B92424373D00E0F0E9 /* blockchain_eosUITests.swift */; };
+		50CCB5AF2424373D00E0F0E9 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5AE2424373D00E0F0E9 /* NetworkingTests.swift */; };
+		584E14731CDD020AEEF96FE6 /* Pods_blockchain_eos_blockchain_eosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642C4A3FCF86BD750130B495 /* Pods_blockchain_eos_blockchain_eosUITests.framework */; };
+		C0459390FEAC8415BF54DBE5 /* Pods_blockchain_eosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CDBA221433F2ADB9163500 /* Pods_blockchain_eosTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13B243C1FE37609779EC6F8B /* Pods-blockchain-eos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockchain-eos.debug.xcconfig"; path = "Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos.debug.xcconfig"; sourceTree = "<group>"; };
+		373B810E56DE49756F6E1325 /* Pods-blockchain-eos-blockchain-eosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockchain-eos-blockchain-eosUITests.debug.xcconfig"; path = "Target Support Files/Pods-blockchain-eos-blockchain-eosUITests/Pods-blockchain-eos-blockchain-eosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5019C2792424885200B258F8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5019C27A2424885200B258F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5019C2852424889300B258F8 /* RecentBlocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewController.swift; sourceTree = "<group>"; };
@@ -70,15 +77,25 @@
 		5019C2AD242664B400B258F8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosBlockTableViewCell.swift; sourceTree = "<group>"; };
 		5019C2B424268FEF00B258F8 /* BlockDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsViewModel.swift; sourceTree = "<group>"; };
+		5019C2BC2426B56900B258F8 /* MockEosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEosApi.swift; sourceTree = "<group>"; };
+		5019C2C12426B8AC00B258F8 /* blockchain-eosUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "blockchain-eosUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		5019C2C22426B8AC00B258F8 /* blockchain_eosUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blockchain_eosUITests.swift; sourceTree = "<group>"; };
 		50CCB5942424373800E0F0E9 /* blockchain-eos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockchain-eos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCB5A02424373D00E0F0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CCB5A52424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CCB5AA2424373D00E0F0E9 /* blockchain-eosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockchain-eosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50CCB5AE2424373D00E0F0E9 /* blockchain_eosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockchain_eosTests.swift; sourceTree = "<group>"; };
+		50CCB5AE2424373D00E0F0E9 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		50CCB5B02424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CCB5B52424373D00E0F0E9 /* blockchain-eosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockchain-eosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50CCB5B92424373D00E0F0E9 /* blockchain_eosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockchain_eosUITests.swift; sourceTree = "<group>"; };
+		50CCB5B92424373D00E0F0E9 /* RecentBlocksViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewControllerUITests.swift; sourceTree = "<group>"; };
 		50CCB5BB2424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		642C4A3FCF86BD750130B495 /* Pods_blockchain_eos_blockchain_eosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blockchain_eos_blockchain_eosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F5B019575CFA0FEA7A51FD /* Pods_blockchain_eos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blockchain_eos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3F2E559AC032B1FFE7E738 /* Pods-blockchain-eosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockchain-eosTests.release.xcconfig"; path = "Target Support Files/Pods-blockchain-eosTests/Pods-blockchain-eosTests.release.xcconfig"; sourceTree = "<group>"; };
+		B8CDBA221433F2ADB9163500 /* Pods_blockchain_eosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blockchain_eosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1453B729FEF29CFFD4B0DE /* Pods-blockchain-eos-blockchain-eosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockchain-eos-blockchain-eosUITests.release.xcconfig"; path = "Target Support Files/Pods-blockchain-eos-blockchain-eosUITests/Pods-blockchain-eos-blockchain-eosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D692BDCCDEFD66E5CD002B71 /* Pods-blockchain-eosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockchain-eosTests.debug.xcconfig"; path = "Target Support Files/Pods-blockchain-eosTests/Pods-blockchain-eosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D96825B4B9C23B41133B3B3A /* Pods-blockchain-eos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockchain-eos.release.xcconfig"; path = "Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07770A261D94AD828B4E00B3 /* Pods_blockchain_eos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0459390FEAC8415BF54DBE5 /* Pods_blockchain_eosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,12 +119,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584E14731CDD020AEEF96FE6 /* Pods_blockchain_eos_blockchain_eosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AC7B961BD7472CD27D9D41E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1F5B019575CFA0FEA7A51FD /* Pods_blockchain_eos.framework */,
+				642C4A3FCF86BD750130B495 /* Pods_blockchain_eos_blockchain_eosUITests.framework */,
+				B8CDBA221433F2ADB9163500 /* Pods_blockchain_eosTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5019C2782424885200B258F8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +252,8 @@
 				50CCB5AD2424373D00E0F0E9 /* blockchain-eosTests */,
 				50CCB5B82424373D00E0F0E9 /* blockchain-eosUITests */,
 				50CCB5952424373800E0F0E9 /* Products */,
+				8959CD8969D9A03CCD193D79 /* Pods */,
+				3AC7B961BD7472CD27D9D41E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -254,7 +286,9 @@
 		50CCB5AD2424373D00E0F0E9 /* blockchain-eosTests */ = {
 			isa = PBXGroup;
 			children = (
-				50CCB5AE2424373D00E0F0E9 /* blockchain_eosTests.swift */,
+				50CCB5AE2424373D00E0F0E9 /* NetworkingTests.swift */,
+				50CCB5B92424373D00E0F0E9 /* RecentBlocksViewControllerUITests.swift */,
+				5019C2BC2426B56900B258F8 /* MockEosApi.swift */,
 				50CCB5B02424373D00E0F0E9 /* Info.plist */,
 			);
 			path = "blockchain-eosTests";
@@ -263,10 +297,24 @@
 		50CCB5B82424373D00E0F0E9 /* blockchain-eosUITests */ = {
 			isa = PBXGroup;
 			children = (
-				50CCB5B92424373D00E0F0E9 /* blockchain_eosUITests.swift */,
+				5019C2C22426B8AC00B258F8 /* blockchain_eosUITests.swift */,
 				50CCB5BB2424373D00E0F0E9 /* Info.plist */,
+				5019C2C12426B8AC00B258F8 /* blockchain-eosUITests-Bridging-Header.h */,
 			);
 			path = "blockchain-eosUITests";
+			sourceTree = "<group>";
+		};
+		8959CD8969D9A03CCD193D79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13B243C1FE37609779EC6F8B /* Pods-blockchain-eos.debug.xcconfig */,
+				D96825B4B9C23B41133B3B3A /* Pods-blockchain-eos.release.xcconfig */,
+				373B810E56DE49756F6E1325 /* Pods-blockchain-eos-blockchain-eosUITests.debug.xcconfig */,
+				BA1453B729FEF29CFFD4B0DE /* Pods-blockchain-eos-blockchain-eosUITests.release.xcconfig */,
+				D692BDCCDEFD66E5CD002B71 /* Pods-blockchain-eosTests.debug.xcconfig */,
+				AD3F2E559AC032B1FFE7E738 /* Pods-blockchain-eosTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +324,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50CCB5BE2424373D00E0F0E9 /* Build configuration list for PBXNativeTarget "blockchain-eos" */;
 			buildPhases = (
+				A0141BE16B3EAD5F319783BE /* [CP] Check Pods Manifest.lock */,
 				50CCB5902424373800E0F0E9 /* Sources */,
 				50CCB5912424373800E0F0E9 /* Frameworks */,
 				50CCB5922424373800E0F0E9 /* Resources */,
@@ -293,9 +342,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50CCB5C12424373D00E0F0E9 /* Build configuration list for PBXNativeTarget "blockchain-eosTests" */;
 			buildPhases = (
+				703A76CD8C567A35BB618C1C /* [CP] Check Pods Manifest.lock */,
 				50CCB5A62424373D00E0F0E9 /* Sources */,
 				50CCB5A72424373D00E0F0E9 /* Frameworks */,
 				50CCB5A82424373D00E0F0E9 /* Resources */,
+				5488B6A14CD5C0B74E80FE2A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,9 +362,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50CCB5C42424373D00E0F0E9 /* Build configuration list for PBXNativeTarget "blockchain-eosUITests" */;
 			buildPhases = (
+				ED860E1AA36048606CC6DAD9 /* [CP] Check Pods Manifest.lock */,
 				50CCB5B12424373D00E0F0E9 /* Sources */,
 				50CCB5B22424373D00E0F0E9 /* Frameworks */,
 				50CCB5B32424373D00E0F0E9 /* Resources */,
+				C5D8BCD6AD02B8F19191FEB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,6 +397,7 @@
 					};
 					50CCB5B42424373D00E0F0E9 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 50CCB5932424373800E0F0E9;
 					};
 				};
@@ -395,6 +449,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5488B6A14CD5C0B74E80FE2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-blockchain-eosTests/Pods-blockchain-eosTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-blockchain-eosTests/Pods-blockchain-eosTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-blockchain-eosTests/Pods-blockchain-eosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		703A76CD8C567A35BB618C1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blockchain-eosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0141BE16B3EAD5F319783BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blockchain-eos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5D8BCD6AD02B8F19191FEB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos-blockchain-eosUITests/Pods-blockchain-eos-blockchain-eosUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos-blockchain-eosUITests/Pods-blockchain-eos-blockchain-eosUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos-blockchain-eosUITests/Pods-blockchain-eos-blockchain-eosUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED860E1AA36048606CC6DAD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blockchain-eos-blockchain-eosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50CCB5902424373800E0F0E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -425,7 +582,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CCB5AF2424373D00E0F0E9 /* blockchain_eosTests.swift in Sources */,
+				50CCB5AF2424373D00E0F0E9 /* NetworkingTests.swift in Sources */,
+				5019C2C02426B7BF00B258F8 /* MockEosApi.swift in Sources */,
+				5019C2BF2426B7B000B258F8 /* RecentBlocksViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CCB5BA2424373D00E0F0E9 /* blockchain_eosUITests.swift in Sources */,
+				5019C2C32426B8AD00B258F8 /* blockchain_eosUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +728,7 @@
 		};
 		50CCB5BF2424373D00E0F0E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B243C1FE37609779EC6F8B /* Pods-blockchain-eos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -587,6 +747,7 @@
 		};
 		50CCB5C02424373D00E0F0E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D96825B4B9C23B41133B3B3A /* Pods-blockchain-eos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -605,6 +766,7 @@
 		};
 		50CCB5C22424373D00E0F0E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D692BDCCDEFD66E5CD002B71 /* Pods-blockchain-eosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -627,6 +789,7 @@
 		};
 		50CCB5C32424373D00E0F0E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD3F2E559AC032B1FFE7E738 /* Pods-blockchain-eosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -649,8 +812,10 @@
 		};
 		50CCB5C52424373D00E0F0E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 373B810E56DE49756F6E1325 /* Pods-blockchain-eos-blockchain-eosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9LZ9YB7Y4;
 				INFOPLIST_FILE = "blockchain-eosUITests/Info.plist";
@@ -661,6 +826,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ho.studio.blockchain-eosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "blockchain-eosUITests/blockchain-eosUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "blockchain-eos";
@@ -669,8 +836,10 @@
 		};
 		50CCB5C62424373D00E0F0E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA1453B729FEF29CFFD4B0DE /* Pods-blockchain-eos-blockchain-eosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9LZ9YB7Y4;
 				INFOPLIST_FILE = "blockchain-eosUITests/Info.plist";
@@ -681,6 +850,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ho.studio.blockchain-eosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "blockchain-eosUITests/blockchain-eosUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "blockchain-eos";
