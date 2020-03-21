@@ -14,9 +14,53 @@
                     <view key="view" contentMode="scaleToFill" id="ExQ-Ww-LJB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producer Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whs-Lj-rpV">
+                                <rect key="frame" x="15" y="59" width="384" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtp-sy-tla">
+                                <rect key="frame" x="15" y="130.5" width="384" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsF-bH-asq">
+                                <rect key="frame" x="140" y="171" width="134" height="28"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="Show Raw JSON"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producer Signature" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh6-1v-E6B">
+                                <rect key="frame" x="15" y="95" width="384" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gsF-bH-asq" firstAttribute="top" secondItem="Qtp-sy-tla" secondAttribute="bottom" constant="20" id="3KS-7V-1ee"/>
+                            <constraint firstItem="Qtp-sy-tla" firstAttribute="trailing" secondItem="yh6-1v-E6B" secondAttribute="trailing" id="8Ub-au-dgA"/>
+                            <constraint firstItem="Whs-Lj-rpV" firstAttribute="leading" secondItem="mey-MD-xVz" secondAttribute="leading" constant="15" id="8lg-dE-9rf"/>
+                            <constraint firstItem="Qtp-sy-tla" firstAttribute="top" secondItem="yh6-1v-E6B" secondAttribute="bottom" constant="15" id="CQe-kv-Vl5"/>
+                            <constraint firstItem="yh6-1v-E6B" firstAttribute="trailing" secondItem="Whs-Lj-rpV" secondAttribute="trailing" id="P2A-wa-UX0"/>
+                            <constraint firstItem="gsF-bH-asq" firstAttribute="centerX" secondItem="ExQ-Ww-LJB" secondAttribute="centerX" id="PDY-Bm-XSQ"/>
+                            <constraint firstItem="yh6-1v-E6B" firstAttribute="top" secondItem="Whs-Lj-rpV" secondAttribute="bottom" constant="15" id="YcL-Nc-vXw"/>
+                            <constraint firstItem="Whs-Lj-rpV" firstAttribute="top" secondItem="mey-MD-xVz" secondAttribute="top" constant="15" id="eA3-zN-ezi"/>
+                            <constraint firstItem="yh6-1v-E6B" firstAttribute="leading" secondItem="Whs-Lj-rpV" secondAttribute="leading" id="nuh-fE-6N7"/>
+                            <constraint firstItem="mey-MD-xVz" firstAttribute="trailing" secondItem="Whs-Lj-rpV" secondAttribute="trailing" constant="15" id="pMZ-4a-WVG"/>
+                            <constraint firstItem="Qtp-sy-tla" firstAttribute="leading" secondItem="yh6-1v-E6B" secondAttribute="leading" id="vWp-SU-0li"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mey-MD-xVz"/>
                     </view>
+                    <connections>
+                        <outlet property="producerNameLabel" destination="Whs-Lj-rpV" id="aqC-0C-5hF"/>
+                        <outlet property="producerSignatureLabel" destination="yh6-1v-E6B" id="Eo6-Ue-QRx"/>
+                        <outlet property="toggleRawJsonButton" destination="gsF-bH-asq" id="H0N-yU-N1h"/>
+                        <outlet property="transactionsCountLabel" destination="Qtp-sy-tla" id="F62-Ny-h28"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yS-7r-Mhn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,7 +20,7 @@ final class RecentBlocksCoordinator: Coordinator {
         let initialScreen = RecentBlocksViewController.instantiate(from: UIStoryboard.main())
         let viewModel = RecentBlocksViewModel(apiClient: self.apiClient)
         viewModel.onClickOnBlock = { block in
-            let blockDetailsCoordinator = BlockDetailsCoordinator(presenter: initialScreen)
+            let blockDetailsCoordinator = BlockDetailsCoordinator(presenter: initialScreen, eosBlock: block)
             blockDetailsCoordinator.start()
         }
         initialScreen.inject(viewModel: viewModel)

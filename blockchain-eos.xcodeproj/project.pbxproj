@@ -26,6 +26,7 @@
 		5019C2A82426438100B258F8 /* RecentBlocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */; };
 		5019C2AE242664B400B258F8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2AD242664B400B258F8 /* BaseViewModel.swift */; };
 		5019C2B1242674A400B258F8 /* EosBlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */; };
+		5019C2B524268FEF00B258F8 /* BlockDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2B424268FEF00B258F8 /* BlockDetailsViewModel.swift */; };
 		50CCB5A12424373D00E0F0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB5A02424373D00E0F0E9 /* Assets.xcassets */; };
 		50CCB5AF2424373D00E0F0E9 /* blockchain_eosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5AE2424373D00E0F0E9 /* blockchain_eosTests.swift */; };
 		50CCB5BA2424373D00E0F0E9 /* blockchain_eosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5B92424373D00E0F0E9 /* blockchain_eosUITests.swift */; };
@@ -68,6 +69,7 @@
 		5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewModel.swift; sourceTree = "<group>"; };
 		5019C2AD242664B400B258F8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosBlockTableViewCell.swift; sourceTree = "<group>"; };
+		5019C2B424268FEF00B258F8 /* BlockDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsViewModel.swift; sourceTree = "<group>"; };
 		50CCB5942424373800E0F0E9 /* blockchain-eos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockchain-eos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCB5A02424373D00E0F0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CCB5A52424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */,
+				5019C2B424268FEF00B258F8 /* BlockDetailsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				5019C2952424FD2000B258F8 /* EosApiImpl.swift in Sources */,
 				5019C2A324263F3700B258F8 /* SceneDelegate.swift in Sources */,
 				5019C2972425953700B258F8 /* BlockDetailsViewController.swift in Sources */,
+				5019C2B524268FEF00B258F8 /* BlockDetailsViewModel.swift in Sources */,
 				5019C2B1242674A400B258F8 /* EosBlockTableViewCell.swift in Sources */,
 				5019C28F24248BCB00B258F8 /* BlockDetailsCoordinator.swift in Sources */,
 				5019C29124248E6000B258F8 /* EosBlock.swift in Sources */,
