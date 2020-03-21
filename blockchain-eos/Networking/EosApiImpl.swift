@@ -56,37 +56,57 @@ final class EosApiImpl: EosApi {
         }
     }
     
-    private func decipherJsonResponse<T: Decodable>(data: Data?, httpUrlResponse: HTTPURLResponse?, error: Error?) -> Result<T, Error> {
+    private func decipherJsonResponse<T: Decodable>(data: Data?, httpUrlResponse: HTTPURLResponse?, error: Error?) -> Result<T, ApiError> {
         if let error = error {
-            return .failure(error)
-        } else if let httpUrlResponse = httpUrlResponse,
-            httpStatusIsOK(httpUrlResponse.statusCode),
-            let data = data{
-            do {
-                let jsonDecoder = JSONDecoder()
-                #if DEBUG
-                print("JSON for request: \(httpUrlResponse.url!)")
-                print(try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]))
-                #endif
-                let result = try jsonDecoder.decode(T.self, from: data)
-                return .success(result)
-            } catch let error {
+            let apiError = ApiError(code: -1, message: error.localizedDescription)
+            
+            return .failure(apiError)
+        } else if let httpUrlResponse = httpUrlResponse {
+            if let data = data {
+                if httpStatusIsOK(httpUrlResponse.statusCode) {
+                    do {
+                        let jsonDecoder = JSONDecoder()
+                        #if DEBUG
+                        print("JSON for request: \(httpUrlResponse.url!)")
+                        print(try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]))
+                        #endif
+                        let result = try jsonDecoder.decode(T.self, from: data)
+                        return .success(result)
+                    } catch let error {
+                        return .failure(ApiError(code: -1, message: error.localizedDescription))
+                    }
+                } else {
+                    // Parse the JSON for error case
+                    do {
+                        let jsonDecoder = JSONDecoder()
+                        #if DEBUG
+                        print("JSON for request: \(httpUrlResponse.url!)")
+                        print(try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]))
+                        #endif
+                        let result = try jsonDecoder.decode(ApiError.self, from: data)
+                        return .failure(result)
+                    } catch let error {
+                        let apiError = ApiError(code: -1, message: error.localizedDescription)
+                        return .failure(apiError)
+                    }
+                }
+            } else {
+                let error = ApiError(code: -1, message: "Bad response")
+                
                 return .failure(error)
             }
         } else {
-            let error = NSError(domain: "EOS", code: -1, userInfo: [
-                NSLocalizedDescriptionKey: NSLocalizedString("Bad response", comment: "")
-            ])
+            let error = ApiError(code: -1, message: "Bad response")
             
             return .failure(error)
         }
     }
     
-    private func executeRequest<T: Decodable>(apiPath: String, method: HTTPMethod = .POST, params: Encodable? = nil, completion: @escaping (Result<T, Error>) -> Void) {
+    private func executeRequest<T: Decodable>(apiPath: String, method: HTTPMethod = .POST, params: Encodable? = nil, completion: @escaping (Result<T, ApiError>) -> Void) {
         do {
             let request = try buildRequest(path: apiPath, method: method, params: params)
             let task = self.urlSession.dataTask(with: request) { (data, urlResponse, error) in
-                let decipheredResponse: Result<T, Error> = self.decipherJsonResponse(data: data, httpUrlResponse: urlResponse as? HTTPURLResponse, error: error)
+                let decipheredResponse: Result<T, ApiError> = self.decipherJsonResponse(data: data, httpUrlResponse: urlResponse as? HTTPURLResponse, error: error)
                 completion(decipheredResponse)
             }
             
@@ -96,12 +116,12 @@ final class EosApiImpl: EosApi {
         }
     }
     
-    func getChainInfo(_ completion: @escaping (Result<EosInfo, Error>) -> Void) {
+    func getChainInfo(_ completion: @escaping (Result<EosInfo, ApiError>) -> Void) {
         
         executeRequest(apiPath: "v1/chain/get_info", completion: completion)
     }
     
-    func getBlock(blockId: String, _ completion: @escaping (Result<EosBlock, Error>) -> Void) {
+    func getBlock(blockId: String, _ completion: @escaping (Result<EosBlock, ApiError>) -> Void) {
         let params = [
             "block_num_or_id": blockId
         ]

@@ -32,4 +32,11 @@ extension StoryboardBasedViewController where Self:UIViewController {
         
         return storyboard.instantiateViewController(withIdentifier: simpleClassName) as! Self
     }
+    
+    func showMessage(title: String, message: String) {
+        let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertView.addAction(UIAlertAction(title: "OK", style: .destructive))
+        
+        self.present(alertView, animated: true)
+    }
 }

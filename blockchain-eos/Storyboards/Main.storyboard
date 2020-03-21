@@ -73,6 +73,11 @@
                                     <action selector="viewRecentBlocks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bvf-G9-nbZ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="Zbx-jl-dp7">
+                                <rect key="frame" x="182" y="426" width="50" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -86,6 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicatorView" destination="Zbx-jl-dp7" id="gH1-JQ-625"/>
                         <outlet property="recentBlocksTableView" destination="m2f-hg-9Jd" id="UsD-7V-D3h"/>
                         <outlet property="viewRecentBlocksButton" destination="Hr6-Pd-kSi" id="Nxy-3o-wmH"/>
                     </connections>
