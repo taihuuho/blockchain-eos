@@ -28,11 +28,11 @@ final class EosApiImpl: EosApi {
     private let endpoint: URL
     private let urlSession: URLSession
     
-    init(endpoint: String, urlSession: URLSession = URLSession.shared) throws {
+    init(endpoint: String, urlSession: URLSession = URLSession.shared) {
         if let endpointUrl = URL(string: endpoint) {
             self.endpoint = endpointUrl
         } else {
-            throw "Invalid URL. Could not create a URL from \(endpoint)"
+            fatalError("Invalid URL. Could not create a URL from \(endpoint)")
         }
         self.urlSession = urlSession
     }
@@ -102,7 +102,10 @@ final class EosApiImpl: EosApi {
     }
     
     func getBlock(blockId: String, _ completion: @escaping (Result<EosBlock, Error>) -> Void) {
-//        executeRequest(apiPath: <#T##String#>, method: <#T##HTTPMethod#>)
+        let params = [
+            "block_num_or_id": blockId
+        ]
+        executeRequest(apiPath: "v1/chain/get_block", params: params, completion: completion)
     }
     
 }
