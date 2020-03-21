@@ -14,6 +14,7 @@ class RecentBlocksViewModel: BaseViewModel {
     
     var onRecentsBlocksUpdated: (([EosBlock]) -> Void)?
     var onLoadingStatusUpdated: ((ApiStatus) -> Void)?
+    var onClickOnBlock:((EosBlock) -> Void)?
     
     var transactionCount: Int {
         get {
@@ -75,5 +76,10 @@ class RecentBlocksViewModel: BaseViewModel {
     
     func getViewTitle() -> String {
         return self.transactionCount > 1 ? "\(self.transactionCount) Blocks" : "\(self.transactionCount) Block"
+    }
+    
+    func clickOnCell(atIndexPath indexPath: IndexPath) {
+        let selectedBlock = self.recentBlocks[indexPath.row]
+        self.onClickOnBlock?(selectedBlock)
     }
 }

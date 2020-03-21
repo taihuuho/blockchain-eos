@@ -11,7 +11,12 @@ import UIKit
 final class BlockDetailsCoordinator: Coordinator {
     var presenter: UIViewController?
     
+    init(presenter: UIViewController) {
+        self.presenter = presenter
+    }
+    
     func start() {
-        
+        let blockDetailsVC = BlockDetailsViewController.instantiate(from: UIStoryboard.main())
+        self.presenter?.navigationController?.pushViewController( blockDetailsVC, animated: true)
     }
 }
