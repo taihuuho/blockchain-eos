@@ -10,12 +10,10 @@
 
 class MockEosApi: EosApi {
     func getChainInfo(_ completion: @escaping (Result<EosInfo, ApiError>) -> Void) {
-        
+        completion(.success(MockDataProvider.createEosInfo()))
     }
     
     func getBlock(blockId: String, _ completion: @escaping (Result<EosBlock, ApiError>) -> Void) {
-        
+        completion(.success(MockDataProvider.createEosBlock()))
     }
-    
-
 }

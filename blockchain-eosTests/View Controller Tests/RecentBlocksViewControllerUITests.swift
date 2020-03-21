@@ -40,5 +40,29 @@ class RecentBlocksViewControllerUITests: QuickSpec {
                 expect(subject.viewRecentBlocksButton.isHidden).to(equal(false))
             }
         }
+        
+        context("when the button is clicked") {
+            beforeEach {
+                subject.viewRecentBlocksButton.sendActions(for: .touchUpInside)
+            }
+            
+            it("the table view should become visible") {
+                expect(subject.recentBlocksTableView.isHidden).toEventually(equal(false))
+            }
+            
+            context("Table view") {
+                it("there should be 20 cells in table view") {
+                    expect(subject.recentBlocksTableView.numberOfRows(inSection: 0)).to(equal(MAX_BLOCKS_PER_PAGE))
+                }
+                
+                it("the first cell should display the correct info of the first block") {
+                    let cell = subject.recentBlocksTableView.cellForRow(at: [0, 1]) as! EosBlockTableViewCell
+                    
+                    expect(cell.producerNameLabel.text).to(equal(""))
+                    expect(cell.transactionsCountLabel.text).to(equal(""))
+                    expect(cell.producerNameLabel.text).to(equal(""))
+                }
+            }
+        }
     }
 }
