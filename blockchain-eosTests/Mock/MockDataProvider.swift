@@ -89,7 +89,12 @@ class MockDataProvider {
           "ref_block_prefix": 69873024
         }
     """
-
+    
+    static var loadedBlocks = [EosBlock]()
+    
+    static func clearAllMockData() {
+        loadedBlocks = [EosBlock]()
+    }
     static func createEosInfo() -> EosInfo {
         let eosInfo = EosInfo(rawJsonResponse: nil, headBlockId: "06a37ea495374f895bfeaf97763d19504365e28ad3ec1490a5795d11a958a0bf")
         
@@ -99,7 +104,9 @@ class MockDataProvider {
     static func createEosBlock() -> EosBlock {
         let jsonDecoder = JSONDecoder()
         let data = getEosBlockJSON.data(using: .utf8)
-        let result = try! jsonDecoder.decode(EosBlock.self, from: data!)
-        return result
+        var block = try! jsonDecoder.decode(EosBlock.self, from: data!)
+        block.rawJsonResponse = getEosBlockJSON as AnyObject
+        loadedBlocks.append(block)
+        return block
     }
 }
