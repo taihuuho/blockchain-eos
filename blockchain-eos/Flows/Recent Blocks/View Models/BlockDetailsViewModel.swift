@@ -14,7 +14,7 @@ class BlockDetailsViewModel: BaseViewModel {
     var onToggleJsonViewerButtonTitleChanged: ((String) -> Void)?
     
     private let eosBlock: EosBlock
-    private var isRawJsonHidden: Bool = true
+    private var isRawJsonHidden: Bool = false
     
     var producer: String {
         get {
@@ -47,7 +47,7 @@ class BlockDetailsViewModel: BaseViewModel {
     }
     
     private func getToggleRawJsonTitle() -> String {
-        return self.isRawJsonHidden ? "Show JSON Viewer" : "Hide JSON Viewer"
+        return self.isRawJsonHidden ? "Show Raw JSON" : "Hide Raw JSON"
     }
     
     func getViewTitle() -> String {

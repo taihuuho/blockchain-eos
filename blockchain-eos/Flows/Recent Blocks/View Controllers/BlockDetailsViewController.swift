@@ -23,14 +23,15 @@ final class BlockDetailsViewController: BaseViewController {
     
     override func setUpUI() {
         self.rawJsonTextView.isEditable = false
-    }
-    
-    override func setUpBinding() {
+        
         self.title = self.viewModel.getViewTitle()
         self.producerNameLabel.text = self.viewModel.producer
         self.transactionsCountLabel.text = self.viewModel.transactionsCount
         self.producerSignatureLabel.text = self.viewModel.producerSignature
         self.rawJsonTextView.text = self.viewModel.rawJsonString
+    }
+    
+    override func setUpBinding() {
         
         self.viewModel.onRawJSONToggled = { hidden in
             self.rawJsonTextView.isHidden = hidden
@@ -39,6 +40,8 @@ final class BlockDetailsViewController: BaseViewController {
         self.viewModel.onToggleJsonViewerButtonTitleChanged = { title  in
             self.toggleRawJsonButton.setTitle(title, for: .normal)
         }
+        
+        self.viewModel.toggleRawJsonViewer()
     }
     
     @IBAction func toggleRawJsonViewer() {
