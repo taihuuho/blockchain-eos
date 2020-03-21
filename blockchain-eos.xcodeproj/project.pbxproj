@@ -28,11 +28,12 @@
 		5019C2AE242664B400B258F8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2AD242664B400B258F8 /* BaseViewModel.swift */; };
 		5019C2B1242674A400B258F8 /* EosBlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */; };
 		5019C2B524268FEF00B258F8 /* BlockDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2B424268FEF00B258F8 /* BlockDetailsViewModel.swift */; };
-		5019C2BF2426B7B000B258F8 /* RecentBlocksViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5B92424373D00E0F0E9 /* RecentBlocksViewControllerUITests.swift */; };
-		5019C2C02426B7BF00B258F8 /* MockEosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2BC2426B56900B258F8 /* MockEosApi.swift */; };
 		5019C2C32426B8AD00B258F8 /* blockchain_eosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2C22426B8AC00B258F8 /* blockchain_eosUITests.swift */; };
+		5019C2CD2426BE7C00B258F8 /* RecentBlocksViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2C72426BE7C00B258F8 /* RecentBlocksViewControllerUITests.swift */; };
+		5019C2CE2426BE7C00B258F8 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2C92426BE7C00B258F8 /* NetworkingTests.swift */; };
+		5019C2CF2426BE7C00B258F8 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2CB2426BE7C00B258F8 /* MockDataProvider.swift */; };
+		5019C2D02426BE7C00B258F8 /* MockEosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2CC2426BE7C00B258F8 /* MockEosApi.swift */; };
 		50CCB5A12424373D00E0F0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB5A02424373D00E0F0E9 /* Assets.xcassets */; };
-		50CCB5AF2424373D00E0F0E9 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5AE2424373D00E0F0E9 /* NetworkingTests.swift */; };
 		584E14731CDD020AEEF96FE6 /* Pods_blockchain_eos_blockchain_eosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642C4A3FCF86BD750130B495 /* Pods_blockchain_eos_blockchain_eosUITests.framework */; };
 		C0459390FEAC8415BF54DBE5 /* Pods_blockchain_eosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CDBA221433F2ADB9163500 /* Pods_blockchain_eosTests.framework */; };
 /* End PBXBuildFile section */
@@ -77,17 +78,17 @@
 		5019C2AD242664B400B258F8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosBlockTableViewCell.swift; sourceTree = "<group>"; };
 		5019C2B424268FEF00B258F8 /* BlockDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsViewModel.swift; sourceTree = "<group>"; };
-		5019C2BC2426B56900B258F8 /* MockEosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEosApi.swift; sourceTree = "<group>"; };
-		5019C2C12426B8AC00B258F8 /* blockchain-eosUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "blockchain-eosUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		5019C2C22426B8AC00B258F8 /* blockchain_eosUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blockchain_eosUITests.swift; sourceTree = "<group>"; };
+		5019C2C72426BE7C00B258F8 /* RecentBlocksViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewControllerUITests.swift; sourceTree = "<group>"; };
+		5019C2C92426BE7C00B258F8 /* NetworkingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
+		5019C2CB2426BE7C00B258F8 /* MockDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
+		5019C2CC2426BE7C00B258F8 /* MockEosApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEosApi.swift; sourceTree = "<group>"; };
 		50CCB5942424373800E0F0E9 /* blockchain-eos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockchain-eos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCB5A02424373D00E0F0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CCB5A52424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CCB5AA2424373D00E0F0E9 /* blockchain-eosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockchain-eosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50CCB5AE2424373D00E0F0E9 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		50CCB5B02424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CCB5B52424373D00E0F0E9 /* blockchain-eosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockchain-eosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50CCB5B92424373D00E0F0E9 /* RecentBlocksViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewControllerUITests.swift; sourceTree = "<group>"; };
 		50CCB5BB2424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		642C4A3FCF86BD750130B495 /* Pods_blockchain_eos_blockchain_eosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blockchain_eos_blockchain_eosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F5B019575CFA0FEA7A51FD /* Pods_blockchain_eos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blockchain_eos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +246,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5019C2C62426BE7C00B258F8 /* View Controller Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2C72426BE7C00B258F8 /* RecentBlocksViewControllerUITests.swift */,
+			);
+			path = "View Controller Tests";
+			sourceTree = "<group>";
+		};
+		5019C2C82426BE7C00B258F8 /* Functional Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2C92426BE7C00B258F8 /* NetworkingTests.swift */,
+			);
+			path = "Functional Tests";
+			sourceTree = "<group>";
+		};
+		5019C2CA2426BE7C00B258F8 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2CB2426BE7C00B258F8 /* MockDataProvider.swift */,
+				5019C2CC2426BE7C00B258F8 /* MockEosApi.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		50CCB58B2424373800E0F0E9 = {
 			isa = PBXGroup;
 			children = (
@@ -286,9 +312,9 @@
 		50CCB5AD2424373D00E0F0E9 /* blockchain-eosTests */ = {
 			isa = PBXGroup;
 			children = (
-				50CCB5AE2424373D00E0F0E9 /* NetworkingTests.swift */,
-				50CCB5B92424373D00E0F0E9 /* RecentBlocksViewControllerUITests.swift */,
-				5019C2BC2426B56900B258F8 /* MockEosApi.swift */,
+				5019C2C82426BE7C00B258F8 /* Functional Tests */,
+				5019C2CA2426BE7C00B258F8 /* Mock */,
+				5019C2C62426BE7C00B258F8 /* View Controller Tests */,
 				50CCB5B02424373D00E0F0E9 /* Info.plist */,
 			);
 			path = "blockchain-eosTests";
@@ -299,7 +325,6 @@
 			children = (
 				5019C2C22426B8AC00B258F8 /* blockchain_eosUITests.swift */,
 				50CCB5BB2424373D00E0F0E9 /* Info.plist */,
-				5019C2C12426B8AC00B258F8 /* blockchain-eosUITests-Bridging-Header.h */,
 			);
 			path = "blockchain-eosUITests";
 			sourceTree = "<group>";
@@ -582,9 +607,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CCB5AF2424373D00E0F0E9 /* NetworkingTests.swift in Sources */,
-				5019C2C02426B7BF00B258F8 /* MockEosApi.swift in Sources */,
-				5019C2BF2426B7B000B258F8 /* RecentBlocksViewControllerUITests.swift in Sources */,
+				5019C2CD2426BE7C00B258F8 /* RecentBlocksViewControllerUITests.swift in Sources */,
+				5019C2CF2426BE7C00B258F8 /* MockDataProvider.swift in Sources */,
+				5019C2D02426BE7C00B258F8 /* MockEosApi.swift in Sources */,
+				5019C2CE2426BE7C00B258F8 /* NetworkingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,7 +852,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ho.studio.blockchain-eosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "blockchain-eosUITests/blockchain-eosUITests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -850,7 +876,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ho.studio.blockchain-eosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "blockchain-eosUITests/blockchain-eosUITests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "blockchain-eos";

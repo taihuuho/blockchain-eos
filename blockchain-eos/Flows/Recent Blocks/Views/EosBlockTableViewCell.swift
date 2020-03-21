@@ -14,6 +14,6 @@ class EosBlockTableViewCell: UITableViewCell {
     
     @IBOutlet weak var producerNameLabel: UILabel!
     
-    @IBOutlet weak var transactionsCountLabel: UILabel!
+    @IBOutlet weak var blockIdLabel: UILabel!
 
 }
