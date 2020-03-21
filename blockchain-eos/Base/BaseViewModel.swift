@@ -9,7 +9,7 @@
 import Foundation
 
 class BaseViewModel {
-    var onError: ((Error) -> Void)?
+    var onError: ((ApiError) -> Void)?
     
     #if DEBUG
     deinit {

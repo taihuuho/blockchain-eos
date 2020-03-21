@@ -13,7 +13,7 @@ import UIKit
 class RecentBlocksViewModel: BaseViewModel {
     
     var onRecentsBlocksUpdated: (([EosBlock]) -> Void)?
-    var onRecentBlocksFetchCompleted: (() -> Void)?
+    var onLoadingStatusUpdated: ((ApiStatus) -> Void)?
     
     var transactionCount: Int {
         get {
@@ -29,6 +29,7 @@ class RecentBlocksViewModel: BaseViewModel {
     }
     
     private func fetchBlock(blockId: String) {
+        self.onLoadingStatusUpdated?(.IN_PROGRESS)
         self.apiClient.getBlock(blockId: blockId) { [weak self] (result) in
             guard let `self` = self else { return }
             
@@ -40,11 +41,12 @@ class RecentBlocksViewModel: BaseViewModel {
                 if self.recentBlocks.count < MAX_BLOCKS {
                     self.fetchBlock(blockId: eosBlock.previousBlockId)
                 } else {
-                    self.onRecentBlocksFetchCompleted?()
+                    self.onLoadingStatusUpdated?(.COMPLETED)
                 }
                 break
             case .failure(let error):
                 self.onError?(error)
+                self.onLoadingStatusUpdated?(.ERROR)
                 break
             }
         }

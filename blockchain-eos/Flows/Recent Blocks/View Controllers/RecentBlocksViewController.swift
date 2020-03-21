@@ -12,6 +12,7 @@ final class RecentBlocksViewController: BaseViewController {
     
     @IBOutlet weak var viewRecentBlocksButton: UIButton!
     @IBOutlet weak var recentBlocksTableView: UITableView!
+    @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     
     private var viewModel: RecentBlocksViewModel!
     
@@ -27,17 +28,23 @@ final class RecentBlocksViewController: BaseViewController {
     }
     
     private func setUpUI() {
+        
+        self.loadingIndicatorView.hidesWhenStopped = true
+        
         self.recentBlocksTableView.rowHeight = UITableView.automaticDimension
         self.recentBlocksTableView.estimatedRowHeight = 60
         self.recentBlocksTableView.delegate = self
         self.recentBlocksTableView.dataSource = self
         self.recentBlocksTableView.isHidden = true
         self.viewRecentBlocksButton.isHidden = false
+        self.loadingIndicatorView.isHidden = true
     }
     
     private func setUpBinding() {
         self.viewModel.onError = { error in
-            print(error)
+            DispatchQueue.main.async {
+                self.showMessage(title: NSLocalizedString("Error", comment: ""), message: error.message)
+            }
         }
         self.viewModel.onRecentsBlocksUpdated = { [weak self] blocks in
             guard let `self` = self else { return }
@@ -50,18 +57,29 @@ final class RecentBlocksViewController: BaseViewController {
             }
         }
         
-        self.viewModel.onRecentBlocksFetchCompleted = { [weak self] in
+        self.viewModel.onLoadingStatusUpdated = { [weak self] apiStatus in
             guard let `self` = self else { return }
             
             DispatchQueue.main.async {
-                self.view.isUserInteractionEnabled = true
+                switch apiStatus {
+                case .IN_PROGRESS:
+                    self.loadingIndicatorView.startAnimating()
+                    self.view.isUserInteractionEnabled = false
+                case .COMPLETED:
+                    self.loadingIndicatorView.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
+                default:
+                    self.loadingIndicatorView.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
+                    self.viewRecentBlocksButton.isHidden = false
+                    self.recentBlocksTableView.isHidden = true
+                }
             }
         }
     }
     
     @IBAction func viewRecentBlocks(_ sender: Any) {
         self.viewModel.fetchRecentBlocks()
-        self.view.isUserInteractionEnabled = false
     }
 }
 
