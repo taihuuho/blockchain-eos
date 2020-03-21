@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50CCB5982424373800E0F0E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5972424373800E0F0E9 /* AppDelegate.swift */; };
-		50CCB59A2424373800E0F0E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5992424373800E0F0E9 /* SceneDelegate.swift */; };
-		50CCB59C2424373800E0F0E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB59B2424373800E0F0E9 /* ViewController.swift */; };
-		50CCB59F2424373800E0F0E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB59D2424373800E0F0E9 /* Main.storyboard */; };
+		5019C2822424885200B258F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5019C2792424885200B258F8 /* LaunchScreen.storyboard */; };
+		5019C2832424885200B258F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5019C27A2424885200B258F8 /* Main.storyboard */; };
+		5019C2862424889300B258F8 /* RecentBlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2852424889300B258F8 /* RecentBlocksViewController.swift */; };
+		5019C2882424898000B258F8 /* EosApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2872424898000B258F8 /* EosApi.swift */; };
+		5019C28B24248AE500B258F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C28A24248AE500B258F8 /* Coordinator.swift */; };
+		5019C28D24248B1F00B258F8 /* RecentBlocksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C28C24248B1F00B258F8 /* RecentBlocksCoordinator.swift */; };
+		5019C28F24248BCB00B258F8 /* BlockDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C28E24248BCB00B258F8 /* BlockDetailsCoordinator.swift */; };
+		5019C29124248E6000B258F8 /* EosBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29024248E6000B258F8 /* EosBlock.swift */; };
+		5019C29324248ECD00B258F8 /* EosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29224248ECD00B258F8 /* EosInfo.swift */; };
+		5019C2952424FD2000B258F8 /* EosApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2942424FD2000B258F8 /* EosApiImpl.swift */; };
+		5019C2972425953700B258F8 /* BlockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2962425953700B258F8 /* BlockDetailsViewController.swift */; };
+		5019C29C2425A66700B258F8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29B2425A66700B258F8 /* UIViewController+Extension.swift */; };
+		5019C2A124263F3700B258F8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29E24263F3700B258F8 /* AppCoordinator.swift */; };
+		5019C2A224263F3700B258F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29F24263F3700B258F8 /* AppDelegate.swift */; };
+		5019C2A324263F3700B258F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A024263F3700B258F8 /* SceneDelegate.swift */; };
+		5019C2A524263FA800B258F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A424263FA800B258F8 /* BaseViewController.swift */; };
+		5019C2A82426438100B258F8 /* RecentBlocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */; };
 		50CCB5A12424373D00E0F0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB5A02424373D00E0F0E9 /* Assets.xcassets */; };
-		50CCB5A42424373D00E0F0E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB5A22424373D00E0F0E9 /* LaunchScreen.storyboard */; };
 		50CCB5AF2424373D00E0F0E9 /* blockchain_eosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5AE2424373D00E0F0E9 /* blockchain_eosTests.swift */; };
 		50CCB5BA2424373D00E0F0E9 /* blockchain_eosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5B92424373D00E0F0E9 /* blockchain_eosUITests.swift */; };
 /* End PBXBuildFile section */
@@ -35,13 +47,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5019C2792424885200B258F8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5019C27A2424885200B258F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5019C2852424889300B258F8 /* RecentBlocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewController.swift; sourceTree = "<group>"; };
+		5019C2872424898000B258F8 /* EosApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosApi.swift; sourceTree = "<group>"; };
+		5019C28A24248AE500B258F8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5019C28C24248B1F00B258F8 /* RecentBlocksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksCoordinator.swift; sourceTree = "<group>"; };
+		5019C28E24248BCB00B258F8 /* BlockDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsCoordinator.swift; sourceTree = "<group>"; };
+		5019C29024248E6000B258F8 /* EosBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosBlock.swift; sourceTree = "<group>"; };
+		5019C29224248ECD00B258F8 /* EosInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosInfo.swift; sourceTree = "<group>"; };
+		5019C2942424FD2000B258F8 /* EosApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosApiImpl.swift; sourceTree = "<group>"; };
+		5019C2962425953700B258F8 /* BlockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsViewController.swift; sourceTree = "<group>"; };
+		5019C29B2425A66700B258F8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		5019C29E24263F3700B258F8 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		5019C29F24263F3700B258F8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5019C2A024263F3700B258F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5019C2A424263FA800B258F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewModel.swift; sourceTree = "<group>"; };
 		50CCB5942424373800E0F0E9 /* blockchain-eos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockchain-eos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50CCB5972424373800E0F0E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50CCB5992424373800E0F0E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		50CCB59B2424373800E0F0E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		50CCB59E2424373800E0F0E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50CCB5A02424373D00E0F0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		50CCB5A32424373D00E0F0E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50CCB5A52424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CCB5AA2424373D00E0F0E9 /* blockchain-eosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "blockchain-eosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCB5AE2424373D00E0F0E9 /* blockchain_eosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockchain_eosTests.swift; sourceTree = "<group>"; };
@@ -76,6 +100,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5019C2782424885200B258F8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2792424885200B258F8 /* LaunchScreen.storyboard */,
+				5019C27A2424885200B258F8 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5019C27B2424885200B258F8 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				5019C27C2424885200B258F8 /* Recent Blocks */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		5019C27C2424885200B258F8 /* Recent Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2A62426432900B258F8 /* View Models */,
+				5019C27D2424885200B258F8 /* Coordinators */,
+				5019C27E2424885200B258F8 /* View Controllers */,
+			);
+			path = "Recent Blocks";
+			sourceTree = "<group>";
+		};
+		5019C27D2424885200B258F8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				5019C28C24248B1F00B258F8 /* RecentBlocksCoordinator.swift */,
+				5019C28E24248BCB00B258F8 /* BlockDetailsCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		5019C27E2424885200B258F8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2852424889300B258F8 /* RecentBlocksViewController.swift */,
+				5019C2962425953700B258F8 /* BlockDetailsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5019C2802424885200B258F8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2942424FD2000B258F8 /* EosApiImpl.swift */,
+				5019C2872424898000B258F8 /* EosApi.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5019C2812424885200B258F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5019C29024248E6000B258F8 /* EosBlock.swift */,
+				5019C29224248ECD00B258F8 /* EosInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5019C28924248AD500B258F8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5019C28A24248AE500B258F8 /* Coordinator.swift */,
+				5019C2A424263FA800B258F8 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5019C29A2425A65500B258F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5019C29B2425A66700B258F8 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5019C29D24263F3700B258F8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5019C29E24263F3700B258F8 /* AppCoordinator.swift */,
+				5019C29F24263F3700B258F8 /* AppDelegate.swift */,
+				5019C2A024263F3700B258F8 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5019C2A62426432900B258F8 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		50CCB58B2424373800E0F0E9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +221,14 @@
 		50CCB5962424373800E0F0E9 /* blockchain-eos */ = {
 			isa = PBXGroup;
 			children = (
-				50CCB5972424373800E0F0E9 /* AppDelegate.swift */,
-				50CCB5992424373800E0F0E9 /* SceneDelegate.swift */,
-				50CCB59B2424373800E0F0E9 /* ViewController.swift */,
-				50CCB59D2424373800E0F0E9 /* Main.storyboard */,
+				5019C29D24263F3700B258F8 /* App */,
+				5019C29A2425A65500B258F8 /* Extensions */,
+				5019C28924248AD500B258F8 /* Base */,
+				5019C27B2424885200B258F8 /* Flows */,
+				5019C2812424885200B258F8 /* Models */,
+				5019C2802424885200B258F8 /* Networking */,
+				5019C2782424885200B258F8 /* Storyboards */,
 				50CCB5A02424373D00E0F0E9 /* Assets.xcassets */,
-				50CCB5A22424373D00E0F0E9 /* LaunchScreen.storyboard */,
 				50CCB5A52424373D00E0F0E9 /* Info.plist */,
 			);
 			path = "blockchain-eos";
@@ -232,9 +356,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CCB5A42424373D00E0F0E9 /* LaunchScreen.storyboard in Resources */,
+				5019C2832424885200B258F8 /* Main.storyboard in Resources */,
 				50CCB5A12424373D00E0F0E9 /* Assets.xcassets in Resources */,
-				50CCB59F2424373800E0F0E9 /* Main.storyboard in Resources */,
+				5019C2822424885200B258F8 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +383,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CCB59C2424373800E0F0E9 /* ViewController.swift in Sources */,
-				50CCB5982424373800E0F0E9 /* AppDelegate.swift in Sources */,
-				50CCB59A2424373800E0F0E9 /* SceneDelegate.swift in Sources */,
+				5019C2A224263F3700B258F8 /* AppDelegate.swift in Sources */,
+				5019C2A124263F3700B258F8 /* AppCoordinator.swift in Sources */,
+				5019C2882424898000B258F8 /* EosApi.swift in Sources */,
+				5019C28D24248B1F00B258F8 /* RecentBlocksCoordinator.swift in Sources */,
+				5019C28B24248AE500B258F8 /* Coordinator.swift in Sources */,
+				5019C2A82426438100B258F8 /* RecentBlocksViewModel.swift in Sources */,
+				5019C2A524263FA800B258F8 /* BaseViewController.swift in Sources */,
+				5019C29C2425A66700B258F8 /* UIViewController+Extension.swift in Sources */,
+				5019C29324248ECD00B258F8 /* EosInfo.swift in Sources */,
+				5019C2952424FD2000B258F8 /* EosApiImpl.swift in Sources */,
+				5019C2A324263F3700B258F8 /* SceneDelegate.swift in Sources */,
+				5019C2972425953700B258F8 /* BlockDetailsViewController.swift in Sources */,
+				5019C28F24248BCB00B258F8 /* BlockDetailsCoordinator.swift in Sources */,
+				5019C29124248E6000B258F8 /* EosBlock.swift in Sources */,
+				5019C2862424889300B258F8 /* RecentBlocksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +431,6 @@
 			targetProxy = 50CCB5B62424373D00E0F0E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		50CCB59D2424373800E0F0E9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50CCB59E2424373800E0F0E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		50CCB5A22424373D00E0F0E9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50CCB5A32424373D00E0F0E9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		50CCB5BC2424373D00E0F0E9 /* Debug */ = {
