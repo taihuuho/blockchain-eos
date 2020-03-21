@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BlockDetailsViewController: BaseViewController {
+final class BlockDetailsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BlockDetailsCoordinator: Coordinator {
+final class BlockDetailsCoordinator: Coordinator {
     var presenter: UIViewController?
     
     func start() {
