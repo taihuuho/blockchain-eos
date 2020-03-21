@@ -56,7 +56,7 @@ final class EosApiImpl: EosApi {
         }
     }
     
-    private func decipherJsonResponse<T: Decodable>(data: Data?, httpUrlResponse: HTTPURLResponse?, error: Error?) -> Result<T, ApiError> {
+    private func decipherJsonResponse<T: RawResponseViewAble>(data: Data?, httpUrlResponse: HTTPURLResponse?, error: Error?) -> Result<T, ApiError> {
         if let error = error {
             let apiError = ApiError(code: -1, message: error.localizedDescription)
             
@@ -70,7 +70,10 @@ final class EosApiImpl: EosApi {
                         print("JSON for request: \(httpUrlResponse.url!)")
                         print(try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]))
                         #endif
-                        let result = try jsonDecoder.decode(T.self, from: data)
+                        var result = try jsonDecoder.decode(T.self, from: data)
+                        let json = try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed])
+                            result.rawJsonResponse = json as AnyObject
+                        
                         return .success(result)
                     } catch let error {
                         return .failure(ApiError(code: -1, message: error.localizedDescription))
@@ -102,7 +105,7 @@ final class EosApiImpl: EosApi {
         }
     }
     
-    private func executeRequest<T: Decodable>(apiPath: String, method: HTTPMethod = .POST, params: Encodable? = nil, completion: @escaping (Result<T, ApiError>) -> Void) {
+    private func executeRequest<T: RawResponseViewAble>(apiPath: String, method: HTTPMethod = .POST, params: Encodable? = nil, completion: @escaping (Result<T, ApiError>) -> Void) {
         do {
             let request = try buildRequest(path: apiPath, method: method, params: params)
             let task = self.urlSession.dataTask(with: request) { (data, urlResponse, error) in

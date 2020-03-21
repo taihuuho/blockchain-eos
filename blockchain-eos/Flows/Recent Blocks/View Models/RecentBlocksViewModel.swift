@@ -14,7 +14,7 @@ class RecentBlocksViewModel: BaseViewModel {
     
     var onRecentsBlocksUpdated: (([EosBlock]) -> Void)?
     var onLoadingStatusUpdated: ((ApiStatus) -> Void)?
-    var onClickOnBlock:((EosBlock) -> Void)?
+    var onClickOnBlock: ((EosBlock) -> Void)?
     
     var transactionCount: Int {
         get {

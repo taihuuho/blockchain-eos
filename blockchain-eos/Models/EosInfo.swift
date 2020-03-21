@@ -6,10 +6,12 @@
 //  Copyright © 2020 Tai Huu Ho. All rights reserved.
 //
 
-struct EosInfo: Decodable {
+struct EosInfo: RawResponseViewAble {
+    
     enum CodingKeys: String, CodingKey {
         case headBlockId = "head_block_id"
     }
+    var rawJsonResponse: AnyObject?
     
     // we only need this field for now
     let headBlockId: String

@@ -11,9 +11,10 @@ import UIKit
 final class BlockDetailsViewController: BaseViewController {
     @IBOutlet weak var producerNameLabel: UILabel!
     @IBOutlet weak var producerSignatureLabel: UILabel!
-    
-    @IBOutlet weak var toggleRawJsonButton: UIButton!
     @IBOutlet weak var transactionsCountLabel: UILabel!
+    @IBOutlet weak var toggleRawJsonButton: UIButton!
+    @IBOutlet weak var rawJsonTextView: UITextView!
+    
     private var viewModel: BlockDetailsViewModel!
     
     func inject(viewModel: BlockDetailsViewModel) {
@@ -21,7 +22,7 @@ final class BlockDetailsViewController: BaseViewController {
     }
     
     override func setUpUI() {
-        
+        self.rawJsonTextView.isEditable = false
     }
     
     override func setUpBinding() {
@@ -29,5 +30,18 @@ final class BlockDetailsViewController: BaseViewController {
         self.producerNameLabel.text = self.viewModel.producer
         self.transactionsCountLabel.text = self.viewModel.transactionsCount
         self.producerSignatureLabel.text = self.viewModel.producerSignature
+        self.rawJsonTextView.text = self.viewModel.rawJsonString
+        
+        self.viewModel.onRawJSONToggled = { hidden in
+            self.rawJsonTextView.isHidden = hidden
+        }
+        
+        self.viewModel.onToggleJsonViewerButtonTitleChanged = { title  in
+            self.toggleRawJsonButton.setTitle(title, for: .normal)
+        }
+    }
+    
+    @IBAction func toggleRawJsonViewer() {
+        self.viewModel.toggleRawJsonViewer()
     }
 }

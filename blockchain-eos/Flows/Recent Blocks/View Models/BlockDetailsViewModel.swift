@@ -10,7 +10,11 @@ import UIKit
 
 class BlockDetailsViewModel: BaseViewModel {
     
+    var onRawJSONToggled: ((Bool) -> Void)?
+    var onToggleJsonViewerButtonTitleChanged: ((String) -> Void)?
+    
     private let eosBlock: EosBlock
+    private var isRawJsonHidden: Bool = true
     
     var producer: String {
         get {
@@ -32,11 +36,27 @@ class BlockDetailsViewModel: BaseViewModel {
         }
     }
     
+    var rawJsonString: String {
+        get {
+            return eosBlock.rawJsonResponse?.description ?? ""
+        }
+    }
+    
     init(eosBlock: EosBlock) {
         self.eosBlock = eosBlock
     }
     
+    private func getToggleRawJsonTitle() -> String {
+        return self.isRawJsonHidden ? "Show JSON Viewer" : "Hide JSON Viewer"
+    }
+    
     func getViewTitle() -> String {
         return "Block Details"
+    }
+    
+    func toggleRawJsonViewer() {
+        self.isRawJsonHidden = !self.isRawJsonHidden
+        self.onRawJSONToggled?(self.isRawJsonHidden)
+        self.onToggleJsonViewerButtonTitleChanged?(self.getToggleRawJsonTitle())
     }
 }
