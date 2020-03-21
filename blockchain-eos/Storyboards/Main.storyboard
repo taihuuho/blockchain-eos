@@ -14,13 +14,88 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m2f-hg-9Jd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EosBlockTableViewCell" rowHeight="76" id="BWZ-qv-NFg" customClass="EosBlockTableViewCell" customModule="blockchain_eos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BWZ-qv-NFg" id="s9z-mW-AAl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producer Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bX-6c-lOx">
+                                                    <rect key="frame" x="25" y="16" width="324" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oda-hb-RCl">
+                                                    <rect key="frame" x="25" y="46" width="324" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_eos" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-I1-io9">
+                                                    <rect key="frame" x="354" y="13" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="4cX-Gq-cZr"/>
+                                                        <constraint firstAttribute="height" constant="50" id="vhe-Vx-YD5"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Oda-hb-RCl" secondAttribute="bottom" constant="9" id="3x4-7w-PKW"/>
+                                                <constraint firstItem="6bX-6c-lOx" firstAttribute="top" secondItem="s9z-mW-AAl" secondAttribute="topMargin" constant="5" id="9aP-3b-ae0"/>
+                                                <constraint firstItem="Oda-hb-RCl" firstAttribute="leading" secondItem="6bX-6c-lOx" secondAttribute="leading" id="E3c-fX-Pn2"/>
+                                                <constraint firstItem="Oda-hb-RCl" firstAttribute="top" secondItem="6bX-6c-lOx" secondAttribute="bottom" constant="9" id="QKv-6s-BFW"/>
+                                                <constraint firstItem="sfT-I1-io9" firstAttribute="centerY" secondItem="s9z-mW-AAl" secondAttribute="centerY" id="SUU-vy-7oM"/>
+                                                <constraint firstAttribute="trailing" secondItem="sfT-I1-io9" secondAttribute="trailing" constant="10" id="ejU-Yo-hna"/>
+                                                <constraint firstItem="sfT-I1-io9" firstAttribute="leading" secondItem="6bX-6c-lOx" secondAttribute="trailing" constant="5" id="jAc-Hc-WZa"/>
+                                                <constraint firstItem="6bX-6c-lOx" firstAttribute="leading" secondItem="s9z-mW-AAl" secondAttribute="leadingMargin" constant="5" id="udF-5t-mxr"/>
+                                                <constraint firstItem="Oda-hb-RCl" firstAttribute="trailing" secondItem="6bX-6c-lOx" secondAttribute="trailing" id="yQ2-pF-FXF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="producerNameLabel" destination="6bX-6c-lOx" id="0k5-gG-hsJ"/>
+                                            <outlet property="transactionsCountLabel" destination="Oda-hb-RCl" id="GyV-TP-8OA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr6-Pd-kSi">
+                                <rect key="frame" x="129.5" y="429" width="155" height="38"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="View Recent Blocks"/>
+                                <connections>
+                                    <action selector="viewRecentBlocks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bvf-G9-nbZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="m2f-hg-9Jd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="66e-Le-c7q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m2f-hg-9Jd" secondAttribute="trailing" id="HJV-6B-LwP"/>
+                            <constraint firstItem="m2f-hg-9Jd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QU1-Zc-Ysd"/>
+                            <constraint firstItem="Hr6-Pd-kSi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VNr-kl-wdr"/>
+                            <constraint firstItem="Hr6-Pd-kSi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q5n-ow-4y2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m2f-hg-9Jd" secondAttribute="bottom" id="sPh-u6-rdA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="recentBlocksTableView" destination="m2f-hg-9Jd" id="UsD-7V-D3h"/>
+                        <outlet property="viewRecentBlocksButton" destination="Hr6-Pd-kSi" id="Nxy-3o-wmH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="101"/>
+            <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_eos" width="512" height="512"/>
+    </resources>
 </document>

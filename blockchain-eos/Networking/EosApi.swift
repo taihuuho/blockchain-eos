@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol EosApi {
+protocol EosApi: class {
     func getChainInfo(_ completion: @escaping(Result<EosInfo, Error>) -> Void)
     func getBlock(blockId: String, _ completion: @escaping(Result<EosBlock, Error>) -> Void)
 }

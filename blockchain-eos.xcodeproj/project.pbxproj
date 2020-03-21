@@ -24,6 +24,8 @@
 		5019C2A324263F3700B258F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A024263F3700B258F8 /* SceneDelegate.swift */; };
 		5019C2A524263FA800B258F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A424263FA800B258F8 /* BaseViewController.swift */; };
 		5019C2A82426438100B258F8 /* RecentBlocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */; };
+		5019C2AE242664B400B258F8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2AD242664B400B258F8 /* BaseViewModel.swift */; };
+		5019C2B1242674A400B258F8 /* EosBlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */; };
 		50CCB5A12424373D00E0F0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB5A02424373D00E0F0E9 /* Assets.xcassets */; };
 		50CCB5AF2424373D00E0F0E9 /* blockchain_eosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5AE2424373D00E0F0E9 /* blockchain_eosTests.swift */; };
 		50CCB5BA2424373D00E0F0E9 /* blockchain_eosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCB5B92424373D00E0F0E9 /* blockchain_eosUITests.swift */; };
@@ -64,6 +66,8 @@
 		5019C2A024263F3700B258F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5019C2A424263FA800B258F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewModel.swift; sourceTree = "<group>"; };
+		5019C2AD242664B400B258F8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosBlockTableViewCell.swift; sourceTree = "<group>"; };
 		50CCB5942424373800E0F0E9 /* blockchain-eos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockchain-eos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCB5A02424373D00E0F0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CCB5A52424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		5019C27C2424885200B258F8 /* Recent Blocks */ = {
 			isa = PBXGroup;
 			children = (
+				5019C2AF2426748500B258F8 /* Views */,
 				5019C2A62426432900B258F8 /* View Models */,
 				5019C27D2424885200B258F8 /* Coordinators */,
 				5019C27E2424885200B258F8 /* View Controllers */,
@@ -168,6 +173,7 @@
 			children = (
 				5019C28A24248AE500B258F8 /* Coordinator.swift */,
 				5019C2A424263FA800B258F8 /* BaseViewController.swift */,
+				5019C2AD242664B400B258F8 /* BaseViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -196,6 +202,14 @@
 				5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		5019C2AF2426748500B258F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2B0242674A400B258F8 /* EosBlockTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		50CCB58B2424373800E0F0E9 = {
@@ -388,6 +402,7 @@
 				5019C2882424898000B258F8 /* EosApi.swift in Sources */,
 				5019C28D24248B1F00B258F8 /* RecentBlocksCoordinator.swift in Sources */,
 				5019C28B24248AE500B258F8 /* Coordinator.swift in Sources */,
+				5019C2AE242664B400B258F8 /* BaseViewModel.swift in Sources */,
 				5019C2A82426438100B258F8 /* RecentBlocksViewModel.swift in Sources */,
 				5019C2A524263FA800B258F8 /* BaseViewController.swift in Sources */,
 				5019C29C2425A66700B258F8 /* UIViewController+Extension.swift in Sources */,
@@ -395,6 +410,7 @@
 				5019C2952424FD2000B258F8 /* EosApiImpl.swift in Sources */,
 				5019C2A324263F3700B258F8 /* SceneDelegate.swift in Sources */,
 				5019C2972425953700B258F8 /* BlockDetailsViewController.swift in Sources */,
+				5019C2B1242674A400B258F8 /* EosBlockTableViewCell.swift in Sources */,
 				5019C28F24248BCB00B258F8 /* BlockDetailsCoordinator.swift in Sources */,
 				5019C29124248E6000B258F8 /* EosBlock.swift in Sources */,
 				5019C2862424889300B258F8 /* RecentBlocksViewController.swift in Sources */,
