@@ -12,28 +12,26 @@ class AppCoordinator: Coordinator {
     
     private weak var window: UIWindow!
     // because we will push to the Block Details screen, so we will be using a nav controller
-    private weak var rootVC: UINavigationController!
+    private weak var presenter: UINavigationController!
     private weak var apiClient: EosApi!
     
     init(window: UIWindow,
-         navController: UINavigationController,
+         presenter: UINavigationController,
          apiClient: EosApi) {
         self.window = window
-        self.rootVC = navController
+        self.presenter = presenter
         self.apiClient = apiClient
     }
     
     func start() {
-        self.window.rootViewController = rootVC
+        self.window.rootViewController = self.presenter
         self.window.makeKeyAndVisible()
         
         self.showInitialScreen()
     }
     
     private func showInitialScreen() {
-        let initialScreen = RecentBlocksViewController.instantiate(from: UIStoryboard.main())
-        let viewModel = RecentBlocksViewModel(apiClient: self.apiClient)
-        initialScreen.inject(viewModel: viewModel)
-        self.rootVC.setViewControllers([initialScreen], animated: false)
+        let recentBlocksCoordinator = RecentBlocksCoordinator(presenter: self.presenter, apiClient: self.apiClient)
+        recentBlocksCoordinator.start()
     }
 }

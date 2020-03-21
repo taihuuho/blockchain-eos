@@ -20,14 +20,7 @@ final class RecentBlocksViewController: BaseViewController {
         self.viewModel = viewModel
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setUpUI()
-        setUpBinding()
-    }
-    
-    private func setUpUI() {
+    override func setUpUI() {
         
         self.loadingIndicatorView.hidesWhenStopped = true
         
@@ -40,7 +33,7 @@ final class RecentBlocksViewController: BaseViewController {
         self.loadingIndicatorView.isHidden = true
     }
     
-    private func setUpBinding() {
+    override func setUpBinding() {
         self.viewModel.onError = { error in
             DispatchQueue.main.async {
                 self.showMessage(title: NSLocalizedString("Error", comment: ""), message: error.message)
@@ -97,5 +90,10 @@ extension RecentBlocksViewController: UITableViewDataSource, UITableViewDelegate
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.viewModel.clickOnCell(atIndexPath: indexPath)
     }
 }

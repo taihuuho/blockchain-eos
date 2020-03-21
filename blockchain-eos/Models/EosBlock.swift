@@ -27,10 +27,13 @@ struct EosTransaction: Decodable {
         netUsageWords = try container.decodeIfPresent(Int.self, forKey: CodingKeys.netUsageWords) ?? -1
 //        trx = try container.dec
     }
-    
 }
 
-struct EosBlock: Decodable {
+protocol RawResponseViewAble: Decodable {
+    var rawJsonResponse: AnyObject? { get set}
+}
+
+struct EosBlock: RawResponseViewAble {
     
     enum CodingKeys: String, CodingKey {
         case producer
@@ -43,6 +46,8 @@ struct EosBlock: Decodable {
     let producerSignature: String
     let transactionsCount: Int
     let previousBlockId: String
+    
+    var rawJsonResponse: AnyObject?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

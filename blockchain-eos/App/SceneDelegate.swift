@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         let navController = UINavigationController()
         let apiClient = EosApiImpl(endpoint: "https://eos.greymass.com")
-        self.appCoordinator = AppCoordinator(window: window, navController: navController, apiClient: apiClient)
+        self.appCoordinator = AppCoordinator(window: window, presenter: navController, apiClient: apiClient)
         
         self.appCoordinator?.start()
     }
