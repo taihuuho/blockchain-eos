@@ -10,7 +10,7 @@ import Nimble
 import Quick
 @testable import blockchain_eos
 
-class RecentBlocksViewControllerUITests: QuickSpec {
+class RecentBlocksViewControllerTests: QuickSpec {
     
     override func spec() {
         var subject: RecentBlocksViewController!
@@ -27,40 +27,47 @@ class RecentBlocksViewControllerUITests: QuickSpec {
             _ = subject.view
         }
         
-        context("when view is load") {
-            it("the table view should be hidden") {
-                expect(subject.recentBlocksTableView.isHidden).to(equal(true))
-            }
-            
-            it("the button title should be correct") {
-                expect(subject.viewRecentBlocksButton.titleLabel?.text).to(equal("View Recent Blocks"))
-            }
-            
-            it("the View Recents Block button should visible") {
-                expect(subject.viewRecentBlocksButton.isHidden).to(equal(false))
-            }
-        }
-        
-        context("when the button is clicked") {
-            beforeEach {
-                subject.viewRecentBlocksButton.sendActions(for: .touchUpInside)
-            }
-            
-            it("the table view should become visible") {
-                expect(subject.recentBlocksTableView.isHidden).toEventually(equal(false))
-            }
-            
-            context("Table view") {
-                it("there should be 20 cells in table view") {
-                    expect(subject.recentBlocksTableView.numberOfRows(inSection: 0)).to(equal(MAX_BLOCKS_PER_PAGE))
+        describe("RecentBlocksViewControllerTests") {
+            context("when view is load") {
+                it("the table view should be hidden") {
+                    expect(subject.recentBlocksTableView.isHidden).to(equal(true))
                 }
                 
-                it("the first cell should display the correct info of the first block") {
-                    let cell = subject.recentBlocksTableView.cellForRow(at: [0, 1]) as! EosBlockTableViewCell
+                it("the button title should be correct") {
+                    expect(subject.viewRecentBlocksButton.titleLabel?.text).to(equal("View Recent Blocks"))
+                }
+                
+                it("the View Recents Block button should visible") {
+                    expect(subject.viewRecentBlocksButton.isHidden).to(equal(false))
+                }
+            }
+            
+            context("when the button is clicked") {
+                beforeEach {
+                    MockDataProvider.clearAllMockData()
+                    subject.viewRecentBlocksButton.sendActions(for: .touchUpInside)
+                }
+                
+                it("the table view should become visible") {
+                    expect(subject.recentBlocksTableView.isHidden).toEventually(equal(false))
+                }
+                
+                describe("Table view") {
+                    it("shoul have one section") {
+                        expect(subject.recentBlocksTableView.numberOfSections).to(equal(1))
+                    }
+                    it("there should be \(MAX_BLOCKS_PER_PAGE) cells in table view") {
+                        expect(subject.recentBlocksTableView.numberOfRows(inSection: 0)).to(equal(MAX_BLOCKS_PER_PAGE))
+                    }
                     
-                    expect(cell.producerNameLabel.text).to(equal(""))
-                    expect(cell.transactionsCountLabel.text).to(equal(""))
-                    expect(cell.producerNameLabel.text).to(equal(""))
+                    it("the 9th cell should display the correct info of the 9th eos block") {
+                        let row = 8
+                        let block = MockDataProvider.loadedBlocks[row]
+                        let cell = subject.tableView(subject.recentBlocksTableView, cellForRowAt: [row, 0]) as! EosBlockTableViewCell
+                        
+                        expect(cell.producerNameLabel.text).to(contain(block.producer))
+                        expect(cell.blockIdLabel.text).to(contain(block.id))
+                    }
                 }
             }
         }

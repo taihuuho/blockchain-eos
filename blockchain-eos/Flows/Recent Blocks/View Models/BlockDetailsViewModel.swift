@@ -46,7 +46,7 @@ class BlockDetailsViewModel: BaseViewModel {
         self.eosBlock = eosBlock
     }
     
-    private func getToggleRawJsonTitle() -> String {
+    func getToggleRawJsonTitle() -> String {
         return self.isRawJsonHidden ? "Show Raw JSON" : "Hide Raw JSON"
     }
     
