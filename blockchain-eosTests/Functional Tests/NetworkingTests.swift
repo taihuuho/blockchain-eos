@@ -1,5 +1,5 @@
 //
-//  blockchain_eosTests.swift
+//  NetworkingTests.swift
 //  blockchain-eosTests
 //
 //  Created by Tai Huu Ho on 3/19/20.
@@ -7,9 +7,10 @@
 //
 
 import XCTest
+
 @testable import blockchain_eos
 
-class blockchain_eosTests: XCTestCase {
+class NetworkingTests: XCTest {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,15 +21,14 @@ class blockchain_eosTests: XCTestCase {
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
     }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+//        self.measure {
+//            // Put the code you want to measure the time of here.
+//        }
     }
 
 }

@@ -36,12 +36,14 @@ protocol RawResponseViewAble: Decodable {
 struct EosBlock: RawResponseViewAble {
     
     enum CodingKeys: String, CodingKey {
+        case id
         case producer
         case producerSignature = "producer_signature"
         case transactions
         case previousBlockId = "previous"
     }
     
+    let id: String
     let producer: String
     let producerSignature: String
     let transactionsCount: Int
@@ -51,6 +53,7 @@ struct EosBlock: RawResponseViewAble {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decodeIfPresent(String.self, forKey: CodingKeys.id) ?? ""
         producer = try container.decodeIfPresent(String.self, forKey: CodingKeys.producer) ?? ""
         producerSignature = try container.decodeIfPresent(String.self, forKey: CodingKeys.producerSignature) ?? ""
     

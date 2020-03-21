@@ -6,7 +6,7 @@
 //  Copyright © 2020 Tai Huu Ho. All rights reserved.
 //
 
-let MAX_BLOCKS = 20;
+let MAX_BLOCKS_PER_PAGE = 20;
 
 import UIKit
 
@@ -39,7 +39,7 @@ class RecentBlocksViewModel: BaseViewModel {
                 self.recentBlocks.append(eosBlock)
                 self.onRecentsBlocksUpdated?(self.recentBlocks)
                 
-                if self.recentBlocks.count < MAX_BLOCKS {
+                if self.recentBlocks.count < MAX_BLOCKS_PER_PAGE {
                     self.fetchBlock(blockId: eosBlock.previousBlockId)
                 } else {
                     self.onLoadingStatusUpdated?(.COMPLETED)
@@ -71,7 +71,7 @@ class RecentBlocksViewModel: BaseViewModel {
     func configureCell(_ cell: EosBlockTableViewCell, forIndexPath indexPath: IndexPath) {
         let eosBlock = self.recentBlocks[indexPath.row]
         cell.producerNameLabel.text = "Producer: \(eosBlock.producer)"
-        cell.transactionsCountLabel.text = eosBlock.transactionsCount > 1 ? "\(eosBlock.transactionsCount) transactions" : "\(eosBlock.transactionsCount) transaction"
+        cell.blockIdLabel.text = "Id: \(eosBlock.id)"
     }
     
     func getViewTitle() -> String {

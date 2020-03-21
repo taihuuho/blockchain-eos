@@ -1,0 +1,6 @@
+framework module Pods_blockchain_eos_blockchain_eosUITests {
+  umbrella header "Pods-blockchain-eos-blockchain-eosUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
