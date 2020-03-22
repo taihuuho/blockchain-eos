@@ -18,12 +18,8 @@ This is an example app that hits the Block.One EOS APIs.
 
 | Load More                                           | Pull to Refresh | 
 |-----------------------------------------------------|:-------------|
-| ![alt text](screenshots/3.Load_more.png) | ![alt text](screenshots/6.Pull_to_refresh) |
+| ![alt text](screenshots/3.Load_more.png) | ![alt text](screenshots/6.Pull_to_refresh.png) |
 
 | Block Details with Raw JSON hidden | Block Details with Raw JSON displaying 
 |-------------------------------------------------------|:-------------|
 | ![alt text](screenshots/4.Block_Details_ShowJSON.png) | ![alt text](screenshots/5.Block_Details_HideJSON.png) | 
-
-
-
-
