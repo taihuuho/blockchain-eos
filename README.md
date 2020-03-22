@@ -12,12 +12,18 @@ This is an example app that hits the Block.One EOS APIs.
 - Open Constants.swift file and set the `EosNodeEndpoint`
 
 ## Screenshots
-| Screen           | Screenshot
-| -------------    |:-------------:|
-| Initial Screen   | ![alt text](screenshots/1.Initial_Screen.png) |
-| 20 Recent Blocks   | ![alt text](screenshots/2.Load_20_recent_blocks.png) |
-| Load More  | ![alt text](screenshots/3.Load_more.png) |
-| Block Details with Raw JSON displaying  | ![alt text](screenshots/4.Block_Details_ShowJSON.png) |
-| Block Details with Raw JSON hidden   | ![alt text](screenshots/5.Block_Details_HideJSON.png) |
+| Initial |
+|------------------------------------|
+| ![alt text](screenshots/1.Initial_Screen.png)  |
+
+| Load More   |20 Recent Blocks | 
+|-------------   |:-------------|
+|![alt text](screenshots/2.Load_20_recent_blocks.png) | ![alt text](screenshots/3.Load_more.png) |
+
+|Block Details with Raw JSON hidden| Block Details with Raw JSON displaying 
+|-------------   |:-------------|
+| ![alt text](screenshots/4.Block_Details_ShowJSON.png) | ![alt text](screenshots/5.Block_Details_HideJSON.png) | 
+
+
 
 
