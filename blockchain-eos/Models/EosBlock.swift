@@ -17,7 +17,6 @@ struct EosTransaction: Decodable {
     let status: String
     let cpuUsageUs: Int
     let netUsageWords: Int
-//    let trx: AnyObject
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -25,7 +24,6 @@ struct EosTransaction: Decodable {
         status = try container.decodeIfPresent(String.self, forKey: CodingKeys.status) ?? ""
         cpuUsageUs = try container.decodeIfPresent(Int.self, forKey: CodingKeys.cpuUsageUs) ?? -1
         netUsageWords = try container.decodeIfPresent(Int.self, forKey: CodingKeys.netUsageWords) ?? -1
-//        trx = try container.dec
     }
 }
 

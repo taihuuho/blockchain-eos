@@ -45,16 +45,43 @@ class RecentBlocksViewControllerUITests: QuickSpec {
                     viewRecentBlocksButton.tap()
                 }
     
-                context("Table View") {
+                describe("Table View") {
+                    var tableView: XCUIElement!
+                    
+                    beforeEach {
+                        tableView = app.tables.firstMatch
+                    }
                     it("is now visible") {
                         expect(app.tables.count).toEventually(equal(1))
                     }
                     
                     it("clicking on a cell will push to Block Details screen") {
                         expect(app.tables.count).toEventually(equal(1))
-                        let tableView = app.tables.firstMatch
                         tableView.cells.firstMatch.tap()
                         expect(app.staticTexts["Block Details"].exists).toEventually(equal(true), timeout: 2)
+                    }
+                    
+                    context("The View More button") {
+                        var viewMoreButton: XCUIElement!
+                        beforeEach {
+                            viewMoreButton = tableView.buttons["View More"]
+
+                            // Swipe down until the button is visible
+                            while !viewMoreButton.isHittable {
+                                tableView.swipeUp()
+                            }
+                        }
+                        
+                        it("should be visible") {
+                            expect(viewMoreButton.isHittable).toEventually(equal(true))
+                        }
+                        
+                        it("when clicked, it should load more") {
+                            let currentRowCount = tableView.children(matching: .cell).count
+                            viewMoreButton.tap()
+                            
+                            expect(tableView.children(matching: .cell).count).toEventually(beGreaterThan(currentRowCount))
+                        }
                     }
                 }
                 
