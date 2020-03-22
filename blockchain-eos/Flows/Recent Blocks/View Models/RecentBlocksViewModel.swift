@@ -6,8 +6,6 @@
 //  Copyright © 2020 Tai Huu Ho. All rights reserved.
 //
 
-let MAX_BLOCKS_PER_PAGE = 20;
-
 import UIKit
 
 class RecentBlocksViewModel: BaseViewModel {
@@ -39,7 +37,7 @@ class RecentBlocksViewModel: BaseViewModel {
                 self.recentBlocks.append(eosBlock)
                 self.onRecentsBlocksUpdated?(self.recentBlocks)
                 
-                if self.recentBlocks.count < MAX_BLOCKS_PER_PAGE {
+                if self.recentBlocks.count < Constants.Networking.MAX_BLOCKS_PER_PAGE {
                     self.fetchBlock(blockId: eosBlock.previousBlockId)
                 } else {
                     self.onLoadingStatusUpdated?(.COMPLETED)
@@ -51,6 +49,12 @@ class RecentBlocksViewModel: BaseViewModel {
                 break
             }
         }
+    }
+    
+    func refreshData() {
+        self.recentBlocks = [EosBlock]()
+        self.onRecentsBlocksUpdated?(self.recentBlocks)
+        self.fetchRecentBlocks()
     }
     
     func fetchRecentBlocks() {
@@ -75,7 +79,7 @@ class RecentBlocksViewModel: BaseViewModel {
     }
     
     func getViewTitle() -> String {
-        return self.blockCount > 1 ? "\(self.blockCount) Blocks" : "\(self.blockCount) Block"
+        return "\(self.blockCount)/\(Constants.Networking.MAX_BLOCKS_PER_PAGE) Blocks" 
     }
     
     func clickOnCell(atIndexPath indexPath: IndexPath) {

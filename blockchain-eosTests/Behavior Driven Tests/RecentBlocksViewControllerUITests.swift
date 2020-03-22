@@ -56,8 +56,8 @@ class RecentBlocksViewControllerTests: QuickSpec {
                     it("shoul have one section") {
                         expect(subject.recentBlocksTableView.numberOfSections).to(equal(1))
                     }
-                    it("there should be \(MAX_BLOCKS_PER_PAGE) cells in table view") {
-                        expect(subject.recentBlocksTableView.numberOfRows(inSection: 0)).to(equal(MAX_BLOCKS_PER_PAGE))
+                    it("there should be \(Constants.Networking.MAX_BLOCKS_PER_PAGE) cells in table view") {
+                        expect(subject.recentBlocksTableView.numberOfRows(inSection: 0)).to(equal(Constants.Networking.MAX_BLOCKS_PER_PAGE))
                     }
                     
                     it("the 9th cell should display the correct info of the 9th eos block") {

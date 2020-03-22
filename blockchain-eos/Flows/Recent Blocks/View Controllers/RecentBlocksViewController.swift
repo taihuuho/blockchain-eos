@@ -14,6 +14,7 @@ final class RecentBlocksViewController: BaseViewController {
     @IBOutlet weak var recentBlocksTableView: UITableView!
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     
+    @IBOutlet weak var logoImageView: UIImageView!
     private var viewModel: RecentBlocksViewModel!
     
     func inject(viewModel: RecentBlocksViewModel) {
@@ -28,9 +29,25 @@ final class RecentBlocksViewController: BaseViewController {
         self.recentBlocksTableView.estimatedRowHeight = 60
         self.recentBlocksTableView.delegate = self
         self.recentBlocksTableView.dataSource = self
+        self.recentBlocksTableView.tableFooterView = UIView()
         self.recentBlocksTableView.isHidden = true
         self.viewRecentBlocksButton.isHidden = false
         self.loadingIndicatorView.isHidden = true
+        
+        addPullToRefreshView()
+    }
+    
+    private func addPullToRefreshView() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:#selector(self.handleRefresh(_:)),for: .valueChanged)
+        refreshControl.tintColor = Constants.UI.AppTextColor
+        
+        self.recentBlocksTableView.addSubview(refreshControl)
+    }
+    
+    @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.viewModel.refreshData()
+        refreshControl.endRefreshing()
     }
     
     override func setUpBinding() {
@@ -57,16 +74,15 @@ final class RecentBlocksViewController: BaseViewController {
                 switch apiStatus {
                 case .IN_PROGRESS:
                     self.loadingIndicatorView.startAnimating()
-                    self.view.isUserInteractionEnabled = false
                     self.viewRecentBlocksButton.isHidden = true
+                    self.logoImageView.isHidden = true
                     self.recentBlocksTableView.isHidden = false
                 case .COMPLETED:
                     self.loadingIndicatorView.stopAnimating()
-                    self.view.isUserInteractionEnabled = true
                 default:
                     self.loadingIndicatorView.stopAnimating()
-                    self.view.isUserInteractionEnabled = true
                     self.viewRecentBlocksButton.isHidden = false
+                    self.logoImageView.isHidden = false
                     self.recentBlocksTableView.isHidden = true
                 }
             }

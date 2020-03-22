@@ -23,6 +23,8 @@ final class BlockDetailsViewController: BaseViewController {
     
     override func setUpUI() {
         self.rawJsonTextView.isEditable = false
+        self.rawJsonTextView.layer.borderWidth = 1
+        self.rawJsonTextView.layer.borderColor = Constants.UI.AppTextColor.cgColor
         
         self.title = self.viewModel.getViewTitle()
         self.producerNameLabel.text = self.viewModel.producer

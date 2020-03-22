@@ -18,7 +18,7 @@ class BlockDetailsViewModel: BaseViewModel {
     
     var producer: String {
         get {
-            return "Producer: \(eosBlock.producer)"
+            return eosBlock.producer
         }
     }
     
@@ -26,13 +26,13 @@ class BlockDetailsViewModel: BaseViewModel {
         get {
             let transactionCountText = eosBlock.transactionCount > 1 ? "\(eosBlock.transactionCount) transactions" : "\(eosBlock.transactionCount) transaction"
             
-            return "Transactions Count: \(transactionCountText)"
+            return transactionCountText
         }
     }
     
     var producerSignature: String {
         get {
-            return "Producer Signature: \n \(eosBlock.producerSignature)"
+            return eosBlock.producerSignature
         }
     }
     

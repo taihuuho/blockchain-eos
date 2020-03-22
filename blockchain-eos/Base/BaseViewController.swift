@@ -16,6 +16,8 @@ class BaseViewController: UIViewController, StoryboardBasedViewController {
         // Do any additional setup after loading the view.
         setUpUI()
         setUpBinding()
+        
+        self.view.backgroundColor = Constants.UI.AppViewBackgroundColor
     }
     
     func setUpUI() {
