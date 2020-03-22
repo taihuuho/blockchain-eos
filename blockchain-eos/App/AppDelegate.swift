@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if CommandLine.arguments.contains("--uitesting") {
             self.stubNetworking()
         }
+        
+        UILabel.appearance().textColor = Constants.UI.AppTextColor
+        UIButton.appearance().setTitleColor( .white, for: .normal)
+        UITextView.appearance().textColor =  Constants.UI.AppTextColor
+        
         return true
     }
 

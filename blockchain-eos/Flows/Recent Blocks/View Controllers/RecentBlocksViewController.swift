@@ -14,6 +14,7 @@ final class RecentBlocksViewController: BaseViewController {
     @IBOutlet weak var recentBlocksTableView: UITableView!
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     
+    @IBOutlet weak var logoImageView: UIImageView!
     private var viewModel: RecentBlocksViewModel!
     
     func inject(viewModel: RecentBlocksViewModel) {
@@ -28,6 +29,7 @@ final class RecentBlocksViewController: BaseViewController {
         self.recentBlocksTableView.estimatedRowHeight = 60
         self.recentBlocksTableView.delegate = self
         self.recentBlocksTableView.dataSource = self
+        self.recentBlocksTableView.tableFooterView = UIView()
         self.recentBlocksTableView.isHidden = true
         self.viewRecentBlocksButton.isHidden = false
         self.loadingIndicatorView.isHidden = true
@@ -59,6 +61,7 @@ final class RecentBlocksViewController: BaseViewController {
                     self.loadingIndicatorView.startAnimating()
                     self.view.isUserInteractionEnabled = false
                     self.viewRecentBlocksButton.isHidden = true
+                    self.logoImageView.isHidden = true
                     self.recentBlocksTableView.isHidden = false
                 case .COMPLETED:
                     self.loadingIndicatorView.stopAnimating()
@@ -67,6 +70,7 @@ final class RecentBlocksViewController: BaseViewController {
                     self.loadingIndicatorView.stopAnimating()
                     self.view.isUserInteractionEnabled = true
                     self.viewRecentBlocksButton.isHidden = false
+                    self.logoImageView.isHidden = false
                     self.recentBlocksTableView.isHidden = true
                 }
             }
