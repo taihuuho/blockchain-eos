@@ -22,11 +22,11 @@ class BlockDetailsViewModel: BaseViewModel {
         }
     }
     
-    var transactionsCount: String {
+    var transactionCount: String {
         get {
-            let transactionsCountText = eosBlock.transactionsCount > 1 ? "\(eosBlock.transactionsCount) transactions" : "\(eosBlock.transactionsCount) transaction"
+            let transactionCountText = eosBlock.transactionCount > 1 ? "\(eosBlock.transactionCount) transactions" : "\(eosBlock.transactionCount) transaction"
             
-            return "Transactions Count: \(transactionsCountText)"
+            return "Transactions Count: \(transactionCountText)"
         }
     }
     

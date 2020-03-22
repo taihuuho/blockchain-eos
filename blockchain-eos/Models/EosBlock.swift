@@ -46,7 +46,7 @@ struct EosBlock: RawResponseViewAble {
     let id: String
     let producer: String
     let producerSignature: String
-    let transactionsCount: Int
+    let transactionCount: Int
     let previousBlockId: String
     
     var rawJsonResponse: AnyObject?
@@ -58,7 +58,7 @@ struct EosBlock: RawResponseViewAble {
         producerSignature = try container.decodeIfPresent(String.self, forKey: CodingKeys.producerSignature) ?? ""
     
         let transactions = try container.decodeIfPresent([EosTransaction].self, forKey: CodingKeys.transactions) ?? [EosTransaction]()
-        transactionsCount = transactions.count
+        transactionCount = transactions.count
         
         previousBlockId = try container.decodeIfPresent(String.self, forKey: CodingKeys.previousBlockId) ?? ""
     }

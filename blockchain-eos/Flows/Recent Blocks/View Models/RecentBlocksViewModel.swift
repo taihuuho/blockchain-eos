@@ -16,7 +16,7 @@ class RecentBlocksViewModel: BaseViewModel {
     var onLoadingStatusUpdated: ((ApiStatus) -> Void)?
     var onClickOnBlock: ((EosBlock) -> Void)?
     
-    var transactionCount: Int {
+    var blockCount: Int {
         get {
             return recentBlocks.count
         }
@@ -75,7 +75,7 @@ class RecentBlocksViewModel: BaseViewModel {
     }
     
     func getViewTitle() -> String {
-        return self.transactionCount > 1 ? "\(self.transactionCount) Blocks" : "\(self.transactionCount) Block"
+        return self.blockCount > 1 ? "\(self.blockCount) Blocks" : "\(self.blockCount) Block"
     }
     
     func clickOnCell(atIndexPath indexPath: IndexPath) {

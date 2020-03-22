@@ -78,7 +78,7 @@ final class RecentBlocksViewController: BaseViewController {
 
 extension RecentBlocksViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.transactionCount
+        return self.viewModel.blockCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
