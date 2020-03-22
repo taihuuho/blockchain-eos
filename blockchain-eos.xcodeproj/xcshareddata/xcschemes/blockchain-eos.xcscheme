@@ -26,17 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "NO"
-      codeCoverageEnabled = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "50CCB5B42424373D00E0F0E9"
-            BuildableName = "blockchain-eosUITests.xctest"
-            BlueprintName = "blockchain-eosUITests"
-            ReferencedContainer = "container:blockchain-eos.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      codeCoverageEnabled = "YES"
+      shouldUseLaunchSchemeArgsEnv = "NO">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -59,6 +50,17 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "50CCB5B42424373D00E0F0E9"
+            BuildableName = "blockchain-eosUITests.xctest"
+            BlueprintName = "blockchain-eosUITests"
+            ReferencedContainer = "container:blockchain-eos.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -80,6 +82,8 @@
             ReferencedContainer = "container:blockchain-eos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
