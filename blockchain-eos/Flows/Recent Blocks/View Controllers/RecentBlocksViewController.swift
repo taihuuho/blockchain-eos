@@ -33,6 +33,21 @@ final class RecentBlocksViewController: BaseViewController {
         self.recentBlocksTableView.isHidden = true
         self.viewRecentBlocksButton.isHidden = false
         self.loadingIndicatorView.isHidden = true
+        
+        addPullToRefreshView()
+    }
+    
+    private func addPullToRefreshView() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:#selector(self.handleRefresh(_:)),for: .valueChanged)
+        refreshControl.tintColor = Constants.UI.AppTextColor
+        
+        self.recentBlocksTableView.addSubview(refreshControl)
+    }
+    
+    @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.viewModel.refreshData()
+        refreshControl.endRefreshing()
     }
     
     override func setUpBinding() {

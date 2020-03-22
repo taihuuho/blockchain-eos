@@ -51,6 +51,12 @@ class RecentBlocksViewModel: BaseViewModel {
         }
     }
     
+    func refreshData() {
+        self.recentBlocks = [EosBlock]()
+        self.onRecentsBlocksUpdated?(self.recentBlocks)
+        self.fetchRecentBlocks()
+    }
+    
     func fetchRecentBlocks() {
         self.apiClient.getChainInfo { [weak self] (result) in
             guard let `self` = self else { return }
@@ -73,7 +79,7 @@ class RecentBlocksViewModel: BaseViewModel {
     }
     
     func getViewTitle() -> String {
-        return self.blockCount > 1 ? "\(self.blockCount) Blocks" : "\(self.blockCount) Block"
+        return "\(self.blockCount)/\(Constants.Networking.MAX_BLOCKS_PER_PAGE) Blocks" 
     }
     
     func clickOnCell(atIndexPath indexPath: IndexPath) {

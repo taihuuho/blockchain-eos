@@ -9,7 +9,7 @@ import UIKit
 
 struct Constants {
     struct Networking {
-        static let MAX_BLOCKS_PER_PAGE = 1
+        static let MAX_BLOCKS_PER_PAGE = 20
         static let EosNodeEndpoint = "https://eos.greymass.com"
     }
     
