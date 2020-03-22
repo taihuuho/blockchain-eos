@@ -68,10 +68,10 @@ final class EosApiClient: EosApi {
                         let jsonDecoder = JSONDecoder()
                         #if DEBUG
                         print("JSON for request: \(httpUrlResponse.url!)")
-                        print(try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]))
+                        print(try JSONSerialization.jsonObject(with: data, options: [.allowFragments]))
                         #endif
                         var result = try jsonDecoder.decode(T.self, from: data)
-                        let json = try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed])
+                        let json = try JSONSerialization.jsonObject(with: data, options:[.allowFragments])
                             result.rawJsonResponse = json as AnyObject
                         
                         return .success(result)
@@ -84,7 +84,7 @@ final class EosApiClient: EosApi {
                         let jsonDecoder = JSONDecoder()
                         #if DEBUG
                         print("JSON for request: \(httpUrlResponse.url!)")
-                        print(try JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]))
+                        print(try JSONSerialization.jsonObject(with: data, options: [.allowFragments]))
                         #endif
                         let result = try jsonDecoder.decode(ApiError.self, from: data)
                         return .failure(result)
