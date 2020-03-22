@@ -6,7 +6,7 @@
 //  Copyright © 2020 Tai Huu Ho. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class BlockDetailsViewModel: BaseViewModel {
     
@@ -14,7 +14,7 @@ class BlockDetailsViewModel: BaseViewModel {
     var onToggleJsonViewerButtonTitleChanged: ((String) -> Void)?
     
     private let eosBlock: EosBlock
-    private var isRawJsonHidden: Bool = false
+    private var isRawJsonHidden: Bool = true
     
     var producer: String {
         get {
