@@ -10,7 +10,7 @@ import Foundation
 
 class MockDataProvider {
     
-    private static var getInfoJSON = """
+    static var getInfoJSON = """
     {
       "server_version": "cc752d7c",
       "chain_id": "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
@@ -31,7 +31,7 @@ class MockDataProvider {
     }
     """
     
-    private static var getEosBlockJSON  = """
+    static var getEosBlockJSON  = """
         {
           "timestamp": "2020-03-20T03:54:30.500",
           "producer": "zbeosbp11111",
@@ -88,6 +88,32 @@ class MockDataProvider {
           "block_num": 111081117,
           "ref_block_prefix": 69873024
         }
+    """
+    
+    static var getEosBlockJSONError = """
+    {
+        "code": 500,
+        "message": "Internal Service Error",
+        "error": {
+            "code": 3010008,
+            "name": "block_id_type_exception",
+            "what": "Invalid block ID",
+            "details": [
+                {
+                    "message": "Invalid block ID: 069e69de9417e85802d2a045d6f6dda3226f526dba8924cec40bd7aaff18ae9",
+                    "file": "chain_plugin.cpp",
+                    "line_number": 2067,
+                    "method": "get_block"
+                },
+                {
+                    "message": "str.size() % 2 == 0: the length of hex string should be even number",
+                    "file": "variant.cpp",
+                    "line_number": 705,
+                    "method": "from_variant"
+                }
+            ]
+        }
+    }
     """
     
     static var loadedBlocks = [EosBlock]()
