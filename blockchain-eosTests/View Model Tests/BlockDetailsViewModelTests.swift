@@ -34,8 +34,6 @@ class BlockDetailsViewModelTests: XCTestCase {
     
     func testToggleRawJSONTwice() {
         
-        self.viewModel.toggleRawJsonViewer()
-        
         self.viewModel.onRawJSONToggled = { hidden in
             XCTAssertFalse(hidden)
         }

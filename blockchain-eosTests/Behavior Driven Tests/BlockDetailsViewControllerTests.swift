@@ -43,8 +43,8 @@ class BlockDetailsViewControllerTests: QuickSpec {
                     expect(subject.toggleRawJsonButton.titleLabel?.text).to(equal(viewModel.getToggleRawJsonTitle()))
                 }
                 
-                it("the Raw JSON should be hidden") {
-                    expect(subject.rawJsonTextView.isHidden).to(equal(true))
+                it("the Raw JSON should be visible by default") {
+                    expect(subject.rawJsonTextView.isHidden).to(equal(false))
                 }
                 
                 it("the labels should display the block details correctly") {
@@ -55,10 +55,10 @@ class BlockDetailsViewControllerTests: QuickSpec {
             }
             
             context("When the Toggle Raw JSON button is click once") {
-                it("the JSON text view should become visible") {
+                it("the JSON text view should be hidden") {
                    
                     subject.toggleRawJsonButton.sendActions(for: .touchUpInside)
-                    expect(subject.rawJsonTextView.isHidden).to(equal(false))
+                    expect(subject.rawJsonTextView.isHidden).to(equal(true))
                 }
                 it("the raw Json should match with the block details") {
                     expect(subject.rawJsonTextView.text).to(equal(eosBlock.rawJsonResponse?.description))
@@ -66,13 +66,13 @@ class BlockDetailsViewControllerTests: QuickSpec {
             }
             
             context("When the Toggle Raw JSON button is click twice") {
-                it("the JSON text view should be hidden again") {
+                it("the JSON text view should be visible again") {
                    
                     subject.toggleRawJsonButton.sendActions(for: .touchUpInside)
-                    expect(subject.rawJsonTextView.isHidden).to(equal(false))
+                    expect(subject.rawJsonTextView.isHidden).to(equal(true))
                     
                     subject.toggleRawJsonButton.sendActions(for: .touchUpInside)
-                    expect(subject.rawJsonTextView.isHidden).to(equal(true))
+                    expect(subject.rawJsonTextView.isHidden).to(equal(false))
                 }
             }
         }

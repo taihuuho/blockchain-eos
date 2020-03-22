@@ -8,12 +8,18 @@
 
 import UIKit
 
+#if DEBUG
+import OHHTTPStubs
+#endif
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        if CommandLine.arguments.contains("--uitesting") {
+            self.stubNetworking()
+        }
         return true
     }
 
@@ -31,6 +37,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    #if DEBUG
+    private func stubNetworking() {
 
+        stub(condition: isHost ("eos.greymass.com")) { (_) -> HTTPStubsResponse in
+            let mockJSON = ProcessInfo.processInfo.environment["GET_INFO_SUCCESS"]!
+            let data = mockJSON.data(using: .utf8)!
+            return HTTPStubsResponse(data: data, statusCode:200, headers:nil)
+        }
+        
+        stub(condition: isPath("/v1/chain/get_block")) { (_) -> HTTPStubsResponse in
+            let mockJSON = ProcessInfo.processInfo.environment["GET_BLOCK_SUCCESS"]!
+            let data = mockJSON.data(using: .utf8)!
+            return HTTPStubsResponse(data: data, statusCode:200, headers:nil)
+        }
+    }
+    
+    #endif
 }
 
