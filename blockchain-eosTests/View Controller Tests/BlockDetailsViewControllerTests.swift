@@ -36,7 +36,7 @@ class BlockDetailsViewControllerTests: QuickSpec {
                 }
                 
                 it("the transactions count label is visible") {
-                    expect(subject.transactionsCountLabel.isHidden).to(equal(false))
+                    expect(subject.transactionCountLabel.isHidden).to(equal(false))
                 }
                 
                 it("the toggle Raw JSON button title should be correct") {
@@ -50,7 +50,7 @@ class BlockDetailsViewControllerTests: QuickSpec {
                 it("the labels should display the block details correctly") {
                     expect(subject.producerNameLabel.text).to(contain(eosBlock.producer))
                     expect(subject.producerSignatureLabel.text).toEventually(contain(eosBlock.producerSignature))
-                    expect(subject.transactionsCountLabel.text).toEventually(contain("\(eosBlock.transactionsCount)"))
+                    expect(subject.transactionCountLabel.text).toEventually(contain("\(eosBlock.transactionCount)"))
                 }
             }
             

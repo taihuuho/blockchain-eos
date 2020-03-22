@@ -11,7 +11,7 @@ import UIKit
 final class BlockDetailsViewController: BaseViewController {
     @IBOutlet weak var producerNameLabel: UILabel!
     @IBOutlet weak var producerSignatureLabel: UILabel!
-    @IBOutlet weak var transactionsCountLabel: UILabel!
+    @IBOutlet weak var transactionCountLabel: UILabel!
     @IBOutlet weak var toggleRawJsonButton: UIButton!
     @IBOutlet weak var rawJsonTextView: UITextView!
     
@@ -26,7 +26,7 @@ final class BlockDetailsViewController: BaseViewController {
         
         self.title = self.viewModel.getViewTitle()
         self.producerNameLabel.text = self.viewModel.producer
-        self.transactionsCountLabel.text = self.viewModel.transactionsCount
+        self.transactionCountLabel.text = self.viewModel.transactionCount
         self.producerSignatureLabel.text = self.viewModel.producerSignature
         self.rawJsonTextView.text = self.viewModel.rawJsonString
     }
