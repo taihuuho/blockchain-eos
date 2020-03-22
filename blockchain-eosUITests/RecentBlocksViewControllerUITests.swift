@@ -30,8 +30,8 @@ class RecentBlocksViewControllerUITests: QuickSpec {
             context("when the view is loaded") {
                 it("It should only have the View Recent Blocks button only") {
                     expect(app.buttons.count).to(equal(1))
-                    let viewRecentBlocksButton = app.staticTexts[self.viewRecentBlocksButtonTitle]
-                    expect(viewRecentBlocksButton.exists).to(equal(true))
+                    let viewRecentBlocksButton = app.buttons[self.viewRecentBlocksButtonTitle]
+                    expect(viewRecentBlocksButton.exists).toEventually(equal(true))
                 }
             }
             
@@ -40,7 +40,7 @@ class RecentBlocksViewControllerUITests: QuickSpec {
                 
                 beforeEach {
                     expect(app.buttons.count).to(equal(1))
-                    viewRecentBlocksButton = app.staticTexts[self.viewRecentBlocksButtonTitle]
+                    viewRecentBlocksButton = app.buttons[self.viewRecentBlocksButtonTitle]
                     
                     viewRecentBlocksButton.tap()
                 }
@@ -58,7 +58,7 @@ class RecentBlocksViewControllerUITests: QuickSpec {
                     it("clicking on a cell will push to Block Details screen") {
                         expect(app.tables.count).toEventually(equal(1))
                         tableView.cells.firstMatch.tap()
-                        expect(app.staticTexts["Block Details"].exists).toEventually(equal(true), timeout: 2)
+                        expect(app.navigationBars["Block Details"].exists).toEventually(equal(true), timeout: 2)
                     }
                     
                     context("The View More button") {

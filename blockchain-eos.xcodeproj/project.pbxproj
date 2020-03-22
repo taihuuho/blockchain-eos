@@ -22,7 +22,6 @@
 		5019C29C2425A66700B258F8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29B2425A66700B258F8 /* UIViewController+Extension.swift */; };
 		5019C2A124263F3700B258F8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29E24263F3700B258F8 /* AppCoordinator.swift */; };
 		5019C2A224263F3700B258F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29F24263F3700B258F8 /* AppDelegate.swift */; };
-		5019C2A324263F3700B258F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A024263F3700B258F8 /* SceneDelegate.swift */; };
 		5019C2A524263FA800B258F8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A424263FA800B258F8 /* BaseViewController.swift */; };
 		5019C2A82426438100B258F8 /* RecentBlocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */; };
 		5019C2AE242664B400B258F8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2AD242664B400B258F8 /* BaseViewModel.swift */; };
@@ -83,7 +82,6 @@
 		5019C29B2425A66700B258F8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		5019C29E24263F3700B258F8 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5019C29F24263F3700B258F8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5019C2A024263F3700B258F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5019C2A424263FA800B258F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5019C2A72426438100B258F8 /* RecentBlocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewModel.swift; sourceTree = "<group>"; };
 		5019C2AD242664B400B258F8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 			children = (
 				5019C29E24263F3700B258F8 /* AppCoordinator.swift */,
 				5019C29F24263F3700B258F8 /* AppDelegate.swift */,
-				5019C2A024263F3700B258F8 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -669,7 +666,6 @@
 				5019C29C2425A66700B258F8 /* UIViewController+Extension.swift in Sources */,
 				5019C29324248ECD00B258F8 /* EosInfo.swift in Sources */,
 				5019C2952424FD2000B258F8 /* EosApiClient.swift in Sources */,
-				5019C2A324263F3700B258F8 /* SceneDelegate.swift in Sources */,
 				5019C2972425953700B258F8 /* BlockDetailsViewController.swift in Sources */,
 				5019C2B524268FEF00B258F8 /* BlockDetailsViewModel.swift in Sources */,
 				5019C2B1242674A400B258F8 /* EosBlockTableViewCell.swift in Sources */,
@@ -774,7 +770,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -828,7 +824,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -844,7 +840,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H9LZ9YB7Y4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "blockchain-eos/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -863,7 +859,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H9LZ9YB7Y4;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "blockchain-eos/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

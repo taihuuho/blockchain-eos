@@ -10,10 +10,4 @@ import Foundation
 
 class BaseViewModel {
     var onError: ((ApiError) -> Void)?
-    
-    #if DEBUG
-    deinit {
-        print("\(NSStringFromClass(Self.self)) deinitiated")
-    }
-    #endif
 }

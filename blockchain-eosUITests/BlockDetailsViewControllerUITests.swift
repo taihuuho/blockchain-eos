@@ -34,7 +34,7 @@ class BlockDetailsViewControllerUITests: QuickSpec {
                 
                 beforeEach {
                     expect(app.buttons.count).to(equal(1))
-                    viewRecentBlocksButton = app.staticTexts[self.viewRecentBlocksButtonTitle]
+                    viewRecentBlocksButton = app.buttons[self.viewRecentBlocksButtonTitle]
                     
                     viewRecentBlocksButton.tap()
                     
@@ -44,11 +44,7 @@ class BlockDetailsViewControllerUITests: QuickSpec {
     
                 context("Block Details screen") {
                     it("is now visible") {
-                        expect(app.staticTexts["Block Details"].exists).toEventually(equal(true), timeout: 2)
-                    }
-                    
-                    it("is now visible") {
-                        expect(app.staticTexts["Block Details"].exists).toEventually(equal(true), timeout: 2)
+                        expect(app.navigationBars["Block Details"].exists).toEventually(equal(true), timeout: 2)
                     }
                     
                     it("The Raw Json is displayed by default") {
