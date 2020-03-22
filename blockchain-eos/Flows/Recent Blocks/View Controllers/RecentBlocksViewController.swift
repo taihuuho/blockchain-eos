@@ -74,16 +74,13 @@ final class RecentBlocksViewController: BaseViewController {
                 switch apiStatus {
                 case .IN_PROGRESS:
                     self.loadingIndicatorView.startAnimating()
-                    self.view.isUserInteractionEnabled = false
                     self.viewRecentBlocksButton.isHidden = true
                     self.logoImageView.isHidden = true
                     self.recentBlocksTableView.isHidden = false
                 case .COMPLETED:
                     self.loadingIndicatorView.stopAnimating()
-                    self.view.isUserInteractionEnabled = true
                 default:
                     self.loadingIndicatorView.stopAnimating()
-                    self.view.isUserInteractionEnabled = true
                     self.viewRecentBlocksButton.isHidden = false
                     self.logoImageView.isHidden = false
                     self.recentBlocksTableView.isHidden = true
