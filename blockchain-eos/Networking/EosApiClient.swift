@@ -1,5 +1,5 @@
 //
-//  EosApiImpl.swift
+//  EosApiClient.swift
 //  blockchain-eos
 //
 //  Created by Tai Huu Ho on 3/20/20.
@@ -23,7 +23,7 @@ enum HTTPMethod: String {
     case POST = "POST"
 }
 
-final class EosApiImpl: EosApi {
+final class EosApiClient: EosApi {
     
     private let endpoint: URL
     private let urlSession: URLSession

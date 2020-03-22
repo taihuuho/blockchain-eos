@@ -17,7 +17,7 @@
 		5019C28F24248BCB00B258F8 /* BlockDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C28E24248BCB00B258F8 /* BlockDetailsCoordinator.swift */; };
 		5019C29124248E6000B258F8 /* EosBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29024248E6000B258F8 /* EosBlock.swift */; };
 		5019C29324248ECD00B258F8 /* EosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29224248ECD00B258F8 /* EosInfo.swift */; };
-		5019C2952424FD2000B258F8 /* EosApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2942424FD2000B258F8 /* EosApiImpl.swift */; };
+		5019C2952424FD2000B258F8 /* EosApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2942424FD2000B258F8 /* EosApiClient.swift */; };
 		5019C2972425953700B258F8 /* BlockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2962425953700B258F8 /* BlockDetailsViewController.swift */; };
 		5019C29C2425A66700B258F8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29B2425A66700B258F8 /* UIViewController+Extension.swift */; };
 		5019C2A124263F3700B258F8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C29E24263F3700B258F8 /* AppCoordinator.swift */; };
@@ -39,6 +39,7 @@
 		5019C2D92426E29800B258F8 /* BlockDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2D82426E29800B258F8 /* BlockDetailsViewModelTests.swift */; };
 		5019C2DC2426E97400B258F8 /* RecentBlocksCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2DB2426E97400B258F8 /* RecentBlocksCoordinatorTests.swift */; };
 		5019C2DE2426E98600B258F8 /* BlockDetailsCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2DD2426E98600B258F8 /* BlockDetailsCoordinatorTests.swift */; };
+		5019C2E3242715E000B258F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2E2242715E000B258F8 /* Constants.swift */; };
 		50CCB5A12424373D00E0F0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB5A02424373D00E0F0E9 /* Assets.xcassets */; };
 		584E14731CDD020AEEF96FE6 /* Pods_blockchain_eos_blockchain_eosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642C4A3FCF86BD750130B495 /* Pods_blockchain_eos_blockchain_eosUITests.framework */; };
 		C0459390FEAC8415BF54DBE5 /* Pods_blockchain_eosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CDBA221433F2ADB9163500 /* Pods_blockchain_eosTests.framework */; };
@@ -73,7 +74,7 @@
 		5019C28E24248BCB00B258F8 /* BlockDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsCoordinator.swift; sourceTree = "<group>"; };
 		5019C29024248E6000B258F8 /* EosBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosBlock.swift; sourceTree = "<group>"; };
 		5019C29224248ECD00B258F8 /* EosInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosInfo.swift; sourceTree = "<group>"; };
-		5019C2942424FD2000B258F8 /* EosApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosApiImpl.swift; sourceTree = "<group>"; };
+		5019C2942424FD2000B258F8 /* EosApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosApiClient.swift; sourceTree = "<group>"; };
 		5019C2962425953700B258F8 /* BlockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsViewController.swift; sourceTree = "<group>"; };
 		5019C29B2425A66700B258F8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		5019C29E24263F3700B258F8 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		5019C2D82426E29800B258F8 /* BlockDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		5019C2DB2426E97400B258F8 /* RecentBlocksCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksCoordinatorTests.swift; sourceTree = "<group>"; };
 		5019C2DD2426E98600B258F8 /* BlockDetailsCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsCoordinatorTests.swift; sourceTree = "<group>"; };
+		5019C2E2242715E000B258F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		50CCB5942424373800E0F0E9 /* blockchain-eos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockchain-eos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCB5A02424373D00E0F0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CCB5A52424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -198,7 +200,7 @@
 		5019C2802424885200B258F8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				5019C2942424FD2000B258F8 /* EosApiImpl.swift */,
+				5019C2942424FD2000B258F8 /* EosApiClient.swift */,
 				5019C2872424898000B258F8 /* EosApi.swift */,
 			);
 			path = Networking;
@@ -258,13 +260,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5019C2C62426BE7C00B258F8 /* View Controller Tests */ = {
+		5019C2C62426BE7C00B258F8 /* Behavior Driven Tests */ = {
 			isa = PBXGroup;
 			children = (
 				5019C2C72426BE7C00B258F8 /* RecentBlocksViewControllerUITests.swift */,
 				5019C2D12426CFDF00B258F8 /* BlockDetailsViewControllerTests.swift */,
 			);
-			path = "View Controller Tests";
+			path = "Behavior Driven Tests";
 			sourceTree = "<group>";
 		};
 		5019C2C82426BE7C00B258F8 /* Functional Tests */ = {
@@ -303,6 +305,14 @@
 			path = "Coordinator Tests";
 			sourceTree = "<group>";
 		};
+		5019C2E1242715CF00B258F8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2E2242715E000B258F8 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		50CCB58B2424373800E0F0E9 = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +338,7 @@
 		50CCB5962424373800E0F0E9 /* blockchain-eos */ = {
 			isa = PBXGroup;
 			children = (
+				5019C2E1242715CF00B258F8 /* Constants */,
 				5019C29D24263F3700B258F8 /* App */,
 				5019C29A2425A65500B258F8 /* Extensions */,
 				5019C28924248AD500B258F8 /* Base */,
@@ -348,7 +359,7 @@
 				5019C2D52426DAEA00B258F8 /* View Model Tests */,
 				5019C2C82426BE7C00B258F8 /* Functional Tests */,
 				5019C2CA2426BE7C00B258F8 /* Mock */,
-				5019C2C62426BE7C00B258F8 /* View Controller Tests */,
+				5019C2C62426BE7C00B258F8 /* Behavior Driven Tests */,
 				50CCB5B02424373D00E0F0E9 /* Info.plist */,
 			);
 			path = "blockchain-eosTests";
@@ -617,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5019C2A224263F3700B258F8 /* AppDelegate.swift in Sources */,
+				5019C2E3242715E000B258F8 /* Constants.swift in Sources */,
 				5019C2A124263F3700B258F8 /* AppCoordinator.swift in Sources */,
 				5019C2882424898000B258F8 /* EosApi.swift in Sources */,
 				5019C28D24248B1F00B258F8 /* RecentBlocksCoordinator.swift in Sources */,
@@ -626,7 +638,7 @@
 				5019C2A524263FA800B258F8 /* BaseViewController.swift in Sources */,
 				5019C29C2425A66700B258F8 /* UIViewController+Extension.swift in Sources */,
 				5019C29324248ECD00B258F8 /* EosInfo.swift in Sources */,
-				5019C2952424FD2000B258F8 /* EosApiImpl.swift in Sources */,
+				5019C2952424FD2000B258F8 /* EosApiClient.swift in Sources */,
 				5019C2A324263F3700B258F8 /* SceneDelegate.swift in Sources */,
 				5019C2972425953700B258F8 /* BlockDetailsViewController.swift in Sources */,
 				5019C2B524268FEF00B258F8 /* BlockDetailsViewModel.swift in Sources */,

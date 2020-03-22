@@ -16,8 +16,8 @@ final class MockURLSession: URLSession {
     override init() {}
     
     func setMockResponse(data: Data? = nil, response: URLResponse? = nil, error: Error? = nil) {
-        dataTask = MockURLSessionDataTask()
-        dataTask.taskResponse = (data, response, error)
+        let responseTuple = (data, response, error)
+        dataTask = MockURLSessionDataTask(taskResponse: responseTuple)
     }
     override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         let (data, response, error) = self.dataTask.taskResponse!
@@ -31,18 +31,22 @@ final class MockURLSession: URLSession {
 }
 
 final class MockURLSessionDataTask: URLSessionDataTask {
+    typealias CompletionTuple = (Data?, URLResponse?, Error?)
     typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
-    var completionHandler: CompletionHandler?
-    var taskResponse: (Data?, URLResponse?, Error?)?
+    var completionHandler: CompletionHandler!
+    var taskResponse: CompletionTuple!
     
-    override init() {}
+    init(taskResponse: CompletionTuple) {
+        self.taskResponse = taskResponse
+    }
     
     override func resume() {
       DispatchQueue.main.async {
-        self.completionHandler?(
-            self.taskResponse?.0,
-            self.taskResponse?.1,
-            self.taskResponse?.2
+        let (data, urlResponse, error) = self.taskResponse
+        self.completionHandler(
+            data,
+            urlResponse,
+            error
         )
       }
     }
@@ -57,7 +61,7 @@ class NetworkingTests: XCTestCase {
     override func setUp() {
         mockUrlSession = MockURLSession()
         baseURL = URL(string: mockServerEndpoint)!
-        apiClient = EosApiImpl(endpoint: mockServerEndpoint, urlSession: mockUrlSession)
+        apiClient = EosApiClient(endpoint: mockServerEndpoint, urlSession: mockUrlSession)
     }
 
     override func tearDown() {

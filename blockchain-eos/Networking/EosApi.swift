@@ -6,8 +6,6 @@
 //  Copyright © 2020 Tai Huu Ho. All rights reserved.
 //
 
-import UIKit
-
 enum ApiStatus {
     case IN_PROGRESS
     case COMPLETED
