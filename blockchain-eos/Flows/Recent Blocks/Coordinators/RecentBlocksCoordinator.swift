@@ -8,24 +8,35 @@
 
 import UIKit
 
+protocol RecentBlocksCoordinatorProtocol {
+    func showRecentBlocks()
+}
+
 final class RecentBlocksCoordinator: Coordinator {
+    
     var presenter: UINavigationController?
     private var apiClient: EosApi
-    init(presenter: UINavigationController, apiClient: EosApi) {
+    
+    init(presenter: UINavigationController?, apiClient: EosApi) {
         self.presenter = presenter
         self.apiClient = apiClient
     }
     
     func start() {
+        showRecentBlocks()
+    }
+}
+
+extension RecentBlocksCoordinator: RecentBlocksCoordinatorProtocol {
+    func showRecentBlocks() {
         let initialScreen = RecentBlocksViewController.instantiate(from: UIStoryboard.main())
         let viewModel = RecentBlocksViewModel(apiClient: self.apiClient)
         viewModel.onClickOnBlock = { block in
-            let blockDetailsCoordinator = BlockDetailsCoordinator(presenter: initialScreen, eosBlock: block)
+            let blockDetailsCoordinator = BlockDetailsCoordinator(presenter: self.presenter, eosBlock: block)
             blockDetailsCoordinator.start()
         }
         initialScreen.inject(viewModel: viewModel)
         
         self.presenter?.setViewControllers([initialScreen], animated: false)
     }
-    
 }
