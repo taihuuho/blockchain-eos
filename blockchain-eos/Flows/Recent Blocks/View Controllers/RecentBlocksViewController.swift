@@ -15,6 +15,9 @@ final class RecentBlocksViewController: BaseViewController {
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     
     @IBOutlet weak var logoImageView: UIImageView!
+    
+    @IBOutlet weak var viewMoreButton: UIButton!
+    
     private var viewModel: RecentBlocksViewModel!
     
     func inject(viewModel: RecentBlocksViewModel) {
@@ -29,7 +32,6 @@ final class RecentBlocksViewController: BaseViewController {
         self.recentBlocksTableView.estimatedRowHeight = 60
         self.recentBlocksTableView.delegate = self
         self.recentBlocksTableView.dataSource = self
-        self.recentBlocksTableView.tableFooterView = UIView()
         self.recentBlocksTableView.isHidden = true
         self.viewRecentBlocksButton.isHidden = false
         self.loadingIndicatorView.isHidden = true
@@ -75,15 +77,18 @@ final class RecentBlocksViewController: BaseViewController {
                 case .IN_PROGRESS:
                     self.loadingIndicatorView.startAnimating()
                     self.viewRecentBlocksButton.isHidden = true
+                    self.viewMoreButton.isHidden = true
                     self.logoImageView.isHidden = true
                     self.recentBlocksTableView.isHidden = false
                 case .COMPLETED:
                     self.loadingIndicatorView.stopAnimating()
+                    self.viewMoreButton.isHidden = false
                 default:
                     self.loadingIndicatorView.stopAnimating()
                     self.viewRecentBlocksButton.isHidden = false
                     self.logoImageView.isHidden = false
                     self.recentBlocksTableView.isHidden = true
+                    self.viewMoreButton.isHidden = false
                 }
             }
         }
@@ -91,6 +96,11 @@ final class RecentBlocksViewController: BaseViewController {
     
     @IBAction func viewRecentBlocks(_ sender: Any) {
         self.viewModel.fetchRecentBlocks()
+    }
+    
+    
+    @IBAction func viewMoreButtonTapped(_ sender: Any) {
+        self.viewModel.viewMore()
     }
 }
 

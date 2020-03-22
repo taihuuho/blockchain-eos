@@ -22,12 +22,13 @@ class RecentBlocksViewModel: BaseViewModel {
     
     private var apiClient: EosApi!
     private var recentBlocks = [EosBlock]()
+    private var currentPage = 1
     
     init(apiClient: EosApi) {
         self.apiClient = apiClient
     }
     
-    private func fetchBlock(blockId: String) {
+    private func fetchBlocks(blockId: String) {
         self.onLoadingStatusUpdated?(.IN_PROGRESS)
         self.apiClient.getBlock(blockId: blockId) { [weak self] (result) in
             guard let `self` = self else { return }
@@ -37,8 +38,8 @@ class RecentBlocksViewModel: BaseViewModel {
                 self.recentBlocks.append(eosBlock)
                 self.onRecentsBlocksUpdated?(self.recentBlocks)
                 
-                if self.recentBlocks.count < Constants.Networking.MAX_BLOCKS_PER_PAGE {
-                    self.fetchBlock(blockId: eosBlock.previousBlockId)
+                if self.recentBlocks.count % Constants.Networking.MAX_BLOCKS_PER_PAGE != 0 {
+                    self.fetchBlocks(blockId: eosBlock.previousBlockId)
                 } else {
                     self.onLoadingStatusUpdated?(.COMPLETED)
                 }
@@ -52,21 +53,31 @@ class RecentBlocksViewModel: BaseViewModel {
     }
     
     func refreshData() {
+        currentPage = 1
         self.recentBlocks = [EosBlock]()
         self.onRecentsBlocksUpdated?(self.recentBlocks)
         self.fetchRecentBlocks()
     }
     
+    func viewMore() {
+        if let currentLowestBlockId = self.recentBlocks.last?.id {
+            currentPage += 1
+            self.fetchBlocks(blockId: currentLowestBlockId)
+        }
+    }
+    
     func fetchRecentBlocks() {
+        self.onLoadingStatusUpdated?(.IN_PROGRESS)
         self.apiClient.getChainInfo { [weak self] (result) in
             guard let `self` = self else { return }
             
             switch result {
             case .success(let eosInfo):
-                self.fetchBlock(blockId: eosInfo.headBlockId)
+                self.fetchBlocks(blockId: eosInfo.headBlockId)
                 break
             case .failure(let error):
                 self.onError?(error)
+                self.onLoadingStatusUpdated?(.ERROR)
                 break
             }
         }
@@ -79,7 +90,7 @@ class RecentBlocksViewModel: BaseViewModel {
     }
     
     func getViewTitle() -> String {
-        return "\(self.blockCount)/\(Constants.Networking.MAX_BLOCKS_PER_PAGE) Blocks" 
+        return "\(self.blockCount)/\(Constants.Networking.MAX_BLOCKS_PER_PAGE * currentPage) Blocks"
     }
     
     func clickOnCell(atIndexPath indexPath: IndexPath) {

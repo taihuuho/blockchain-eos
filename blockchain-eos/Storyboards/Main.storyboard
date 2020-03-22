@@ -120,6 +120,28 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m2f-hg-9Jd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="VS6-D6-IvW">
+                                    <rect key="frame" x="0.0" y="132" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojm-ie-yOy">
+                                            <rect key="frame" x="160.5" y="31" width="93" height="38"/>
+                                            <color key="backgroundColor" red="0.21176470589999999" green="0.27058823529999998" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <state key="normal" title="View More">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="viewMoreButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kWe-o9-3pK"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Ojm-ie-yOy" firstAttribute="centerX" secondItem="VS6-D6-IvW" secondAttribute="centerX" id="DIU-WI-7rU"/>
+                                        <constraint firstItem="Ojm-ie-yOy" firstAttribute="centerY" secondItem="VS6-D6-IvW" secondAttribute="centerY" id="ity-jB-qSO"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EosBlockTableViewCell" rowHeight="76" id="BWZ-qv-NFg" customClass="EosBlockTableViewCell" customModule="blockchain_eos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="76"/>
@@ -210,6 +232,7 @@
                         <outlet property="loadingIndicatorView" destination="Zbx-jl-dp7" id="gH1-JQ-625"/>
                         <outlet property="logoImageView" destination="fdu-1w-o3w" id="4fQ-iv-4mk"/>
                         <outlet property="recentBlocksTableView" destination="m2f-hg-9Jd" id="UsD-7V-D3h"/>
+                        <outlet property="viewMoreButton" destination="Ojm-ie-yOy" id="SgV-eY-OOc"/>
                         <outlet property="viewRecentBlocksButton" destination="Hr6-Pd-kSi" id="Nxy-3o-wmH"/>
                     </connections>
                 </viewController>
