@@ -9,10 +9,9 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-    
     private weak var window: UIWindow!
     // because we will push to the Block Details screen, so we will be using a nav controller
-    private weak var presenter: UINavigationController!
+    var presenter: UINavigationController?
     private weak var apiClient: EosApi!
     
     init(window: UIWindow,

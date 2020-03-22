@@ -9,6 +9,7 @@
 import UIKit
 
 protocol Coordinator {
+    var presenter: UINavigationController? { get set}
     /// Kicks off the flow that is governed by the coordinator.
     /// For example, a view controller might be pushed onto another view controller
     /// that this coordinator is initialized with.

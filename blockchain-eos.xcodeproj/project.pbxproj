@@ -37,6 +37,8 @@
 		5019C2D42426D8DA00B258F8 /* UtilFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2D32426D8DA00B258F8 /* UtilFunctionsTests.swift */; };
 		5019C2D72426DD5A00B258F8 /* RecentBlocksViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2D62426DD5A00B258F8 /* RecentBlocksViewModelTests.swift */; };
 		5019C2D92426E29800B258F8 /* BlockDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2D82426E29800B258F8 /* BlockDetailsViewModelTests.swift */; };
+		5019C2DC2426E97400B258F8 /* RecentBlocksCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2DB2426E97400B258F8 /* RecentBlocksCoordinatorTests.swift */; };
+		5019C2DE2426E98600B258F8 /* BlockDetailsCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2DD2426E98600B258F8 /* BlockDetailsCoordinatorTests.swift */; };
 		50CCB5A12424373D00E0F0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCB5A02424373D00E0F0E9 /* Assets.xcassets */; };
 		584E14731CDD020AEEF96FE6 /* Pods_blockchain_eos_blockchain_eosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642C4A3FCF86BD750130B495 /* Pods_blockchain_eos_blockchain_eosUITests.framework */; };
 		C0459390FEAC8415BF54DBE5 /* Pods_blockchain_eosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CDBA221433F2ADB9163500 /* Pods_blockchain_eosTests.framework */; };
@@ -91,6 +93,8 @@
 		5019C2D32426D8DA00B258F8 /* UtilFunctionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilFunctionsTests.swift; sourceTree = "<group>"; };
 		5019C2D62426DD5A00B258F8 /* RecentBlocksViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewModelTests.swift; sourceTree = "<group>"; };
 		5019C2D82426E29800B258F8 /* BlockDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		5019C2DB2426E97400B258F8 /* RecentBlocksCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksCoordinatorTests.swift; sourceTree = "<group>"; };
+		5019C2DD2426E98600B258F8 /* BlockDetailsCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailsCoordinatorTests.swift; sourceTree = "<group>"; };
 		50CCB5942424373800E0F0E9 /* blockchain-eos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blockchain-eos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCB5A02424373D00E0F0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CCB5A52424373D00E0F0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -290,6 +294,15 @@
 			path = "View Model Tests";
 			sourceTree = "<group>";
 		};
+		5019C2DA2426E96100B258F8 /* Coordinator Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5019C2DB2426E97400B258F8 /* RecentBlocksCoordinatorTests.swift */,
+				5019C2DD2426E98600B258F8 /* BlockDetailsCoordinatorTests.swift */,
+			);
+			path = "Coordinator Tests";
+			sourceTree = "<group>";
+		};
 		50CCB58B2424373800E0F0E9 = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +344,7 @@
 		50CCB5AD2424373D00E0F0E9 /* blockchain-eosTests */ = {
 			isa = PBXGroup;
 			children = (
+				5019C2DA2426E96100B258F8 /* Coordinator Tests */,
 				5019C2D52426DAEA00B258F8 /* View Model Tests */,
 				5019C2C82426BE7C00B258F8 /* Functional Tests */,
 				5019C2CA2426BE7C00B258F8 /* Mock */,
@@ -632,9 +646,11 @@
 				5019C2D42426D8DA00B258F8 /* UtilFunctionsTests.swift in Sources */,
 				5019C2CF2426BE7C00B258F8 /* MockDataProvider.swift in Sources */,
 				5019C2D02426BE7C00B258F8 /* MockEosApi.swift in Sources */,
+				5019C2DE2426E98600B258F8 /* BlockDetailsCoordinatorTests.swift in Sources */,
 				5019C2CE2426BE7C00B258F8 /* NetworkingTests.swift in Sources */,
 				5019C2D92426E29800B258F8 /* BlockDetailsViewModelTests.swift in Sources */,
 				5019C2D22426CFDF00B258F8 /* BlockDetailsViewControllerTests.swift in Sources */,
+				5019C2DC2426E97400B258F8 /* RecentBlocksCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
