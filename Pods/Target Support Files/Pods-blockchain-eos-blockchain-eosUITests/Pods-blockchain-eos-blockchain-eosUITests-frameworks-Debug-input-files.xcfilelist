@@ -1,4 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-blockchain-eos-blockchain-eosUITests/Pods-blockchain-eos-blockchain-eosUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework
+${BUILT_PRODUCTS_DIR}/EosioSwift/EosioSwift.framework
+${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework
 ${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework
 ${BUILT_PRODUCTS_DIR}/Quick/Quick.framework
 ${BUILT_PRODUCTS_DIR}/Swifter/Swifter.framework

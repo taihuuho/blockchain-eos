@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07770A261D94AD828B4E00B3 /* Pods_blockchain_eos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F5B019575CFA0FEA7A51FD /* Pods_blockchain_eos.framework */; };
+		500D789D24282C2A000C243F /* EOSIOBasedApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D789C24282C2A000C243F /* EOSIOBasedApiClient.swift */; };
+		500D789F24283956000C243F /* APIClientFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D789E24283956000C243F /* APIClientFactory.swift */; };
 		5019C2822424885200B258F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5019C2792424885200B258F8 /* LaunchScreen.storyboard */; };
 		5019C2832424885200B258F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5019C27A2424885200B258F8 /* Main.storyboard */; };
 		5019C2862424889300B258F8 /* RecentBlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019C2852424889300B258F8 /* RecentBlocksViewController.swift */; };
@@ -68,6 +70,8 @@
 /* Begin PBXFileReference section */
 		13B243C1FE37609779EC6F8B /* Pods-blockchain-eos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockchain-eos.debug.xcconfig"; path = "Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos.debug.xcconfig"; sourceTree = "<group>"; };
 		373B810E56DE49756F6E1325 /* Pods-blockchain-eos-blockchain-eosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockchain-eos-blockchain-eosUITests.debug.xcconfig"; path = "Target Support Files/Pods-blockchain-eos-blockchain-eosUITests/Pods-blockchain-eos-blockchain-eosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		500D789C24282C2A000C243F /* EOSIOBasedApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOSIOBasedApiClient.swift; sourceTree = "<group>"; };
+		500D789E24283956000C243F /* APIClientFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientFactory.swift; sourceTree = "<group>"; };
 		5019C2792424885200B258F8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5019C27A2424885200B258F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5019C2852424889300B258F8 /* RecentBlocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentBlocksViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 			children = (
 				5019C2942424FD2000B258F8 /* EosApiClient.swift */,
 				5019C2872424898000B258F8 /* EosApi.swift */,
+				500D789C24282C2A000C243F /* EOSIOBasedApiClient.swift */,
+				500D789E24283956000C243F /* APIClientFactory.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				50CCB5902424373800E0F0E9 /* Sources */,
 				50CCB5912424373800E0F0E9 /* Frameworks */,
 				50CCB5922424373800E0F0E9 /* Resources */,
+				FC331661AD6BB7213FCE8768 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -629,6 +636,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FC331661AD6BB7213FCE8768 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -646,6 +670,7 @@
 				5019C2A82426438100B258F8 /* RecentBlocksViewModel.swift in Sources */,
 				5019C2A524263FA800B258F8 /* BaseViewController.swift in Sources */,
 				5019C29C2425A66700B258F8 /* UIViewController+Extension.swift in Sources */,
+				500D789D24282C2A000C243F /* EOSIOBasedApiClient.swift in Sources */,
 				5019C29324248ECD00B258F8 /* EosInfo.swift in Sources */,
 				5019C2952424FD2000B258F8 /* EosApiClient.swift in Sources */,
 				5019C2972425953700B258F8 /* BlockDetailsViewController.swift in Sources */,
@@ -654,6 +679,7 @@
 				5019C28F24248BCB00B258F8 /* BlockDetailsCoordinator.swift in Sources */,
 				5019C29124248E6000B258F8 /* EosBlock.swift in Sources */,
 				5019C2862424889300B258F8 /* RecentBlocksViewController.swift in Sources */,
+				500D789F24283956000C243F /* APIClientFactory.swift in Sources */,
 				5019C2EF2427CF1600B258F8 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,7 +778,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -806,7 +832,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

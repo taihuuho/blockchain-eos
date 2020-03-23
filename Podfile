@@ -7,6 +7,9 @@ target 'blockchain-eos' do
 
   # Pods for blockchain-eos
 
+  # EOSIO Swift SDK
+  pod "EosioSwift", "~> 0.2.1" # pod for this library
+  
   def testing_pods
     pod 'Quick'
     pod 'Nimble'
