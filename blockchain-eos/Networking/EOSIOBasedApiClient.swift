@@ -41,8 +41,9 @@ class EOSIOBasedApiClient: EosApi {
             .done { (eosBlock) in
                 if let rawJSONResponse = eosBlock._rawResponse,
                     let data = try? JSONSerialization.data(withJSONObject: rawJSONResponse, options: []),
-                    let myEosBlock = try? JSONDecoder().decode(EosBlock.self, from: data)
+                    var myEosBlock = try? JSONDecoder().decode(EosBlock.self, from: data)
                     {
+                        myEosBlock.rawJsonResponse = eosBlock._rawResponse as AnyObject
                     completion(.success(myEosBlock))
                 } else {
                     
