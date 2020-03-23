@@ -35,9 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        
         let navController = UINavigationController()
-        var apiClient = EosApiClient(endpoint: Constants.Networking.EosNodeEndpoint)
+        
+        let apiClientFactory = APIClientFactory(apiClientMode: Constants.Networking.ApiClientMode)
+        var apiClient = apiClientFactory.newApiClient()
         
         #if DEBUG
         if let mockEndpoint = ProcessInfo.processInfo.environment["MOCK_SERVER"] {

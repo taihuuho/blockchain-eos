@@ -11,11 +11,12 @@ struct Constants {
     struct Networking {
         static let MAX_BLOCKS_PER_PAGE = 20
         static let EosNodeEndpoint = "https://eos.greymass.com"
+        static let ApiClientMode: APIClientMode = .eosioSDK
     }
     
     struct UI {
         static let AppViewBackgroundColor = UIColor.white
-        
         static let AppTextColor = UIColor(hex: 0x364583)
     }
 }
+
