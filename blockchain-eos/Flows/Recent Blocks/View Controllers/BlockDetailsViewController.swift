@@ -35,11 +35,15 @@ final class BlockDetailsViewController: BaseViewController {
     
     override func setUpBinding() {
         
-        self.viewModel.onRawJSONToggled = { hidden in
+        self.viewModel.onRawJSONToggled = { [weak self] hidden in
+            guard let `self` = self else { return }
+            
             self.rawJsonTextView.isHidden = hidden
         }
         
-        self.viewModel.onToggleJsonViewerButtonTitleChanged = { title  in
+        self.viewModel.onToggleJsonViewerButtonTitleChanged = { [weak self] title  in
+            guard let `self` = self else { return }
+            
             self.toggleRawJsonButton.setTitle(title, for: .normal)
         }
         

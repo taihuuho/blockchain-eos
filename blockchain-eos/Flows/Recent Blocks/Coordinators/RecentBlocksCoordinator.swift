@@ -31,7 +31,9 @@ extension RecentBlocksCoordinator: RecentBlocksCoordinatorProtocol {
     func showRecentBlocks() {
         let initialScreen = RecentBlocksViewController.instantiate(from: UIStoryboard.main())
         let viewModel = RecentBlocksViewModel(apiClient: self.apiClient)
-        viewModel.onClickOnBlock = { block in
+        viewModel.onClickOnBlock = {[weak self] block in
+            guard let `self` = self else { return }
+            
             let blockDetailsCoordinator = BlockDetailsCoordinator(presenter: self.presenter, eosBlock: block)
             blockDetailsCoordinator.start()
         }

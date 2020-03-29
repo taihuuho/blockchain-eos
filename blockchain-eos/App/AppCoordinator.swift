@@ -13,6 +13,7 @@ class AppCoordinator: Coordinator {
     // because we will push to the Block Details screen, so we will be using a nav controller
     var presenter: UINavigationController?
     private weak var apiClient: EosApi!
+    private var recentBlocksCoordinator: RecentBlocksCoordinator!
     
     init(window: UIWindow,
          presenter: UINavigationController,
@@ -30,7 +31,7 @@ class AppCoordinator: Coordinator {
     }
     
     private func showInitialScreen() {
-        let recentBlocksCoordinator = RecentBlocksCoordinator(presenter: self.presenter, apiClient: self.apiClient)
+        recentBlocksCoordinator = RecentBlocksCoordinator(presenter: self.presenter, apiClient: self.apiClient)
         recentBlocksCoordinator.start()
     }
 }

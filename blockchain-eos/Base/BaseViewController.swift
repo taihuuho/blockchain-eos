@@ -10,6 +10,12 @@ import UIKit
 
 class BaseViewController: UIViewController, StoryboardBasedViewController {
 
+    #if DEBUG
+    deinit {
+        print("\(self) deninitializing")
+    }
+    #endif
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
