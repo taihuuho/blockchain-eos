@@ -1,4 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-blockchain-eos-blockchain-eosUITests/Pods-blockchain-eos-blockchain-eosUITests-frameworks.sh
-${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework
 ${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework
 ${BUILT_PRODUCTS_DIR}/Quick/Quick.framework
+${BUILT_PRODUCTS_DIR}/Swifter/Swifter.framework

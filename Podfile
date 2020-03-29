@@ -6,7 +6,6 @@ target 'blockchain-eos' do
   use_frameworks!
 
   # Pods for blockchain-eos
-  pod 'OHHTTPStubs/Swift'
 
   def testing_pods
     pod 'Quick'
@@ -22,6 +21,7 @@ target 'blockchain-eos' do
   target 'blockchain-eosUITests' do
     # Pods for testing
     testing_pods
+    pod 'Swifter', '~> 1.4.7'
   end
 
 end

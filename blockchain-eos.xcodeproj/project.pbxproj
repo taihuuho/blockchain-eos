@@ -407,7 +407,6 @@
 				50CCB5902424373800E0F0E9 /* Sources */,
 				50CCB5912424373800E0F0E9 /* Frameworks */,
 				50CCB5922424373800E0F0E9 /* Resources */,
-				5694EAC5F4E7E8EF17A2FDA8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -545,23 +544,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-blockchain-eosTests/Pods-blockchain-eosTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5694EAC5F4E7E8EF17A2FDA8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-blockchain-eos/Pods-blockchain-eos-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		703A76CD8C567A35BB618C1C /* [CP] Check Pods Manifest.lock */ = {
