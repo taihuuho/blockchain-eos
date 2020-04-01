@@ -10,4 +10,10 @@ import Foundation
 
 class BaseViewModel {
     var onError: ((ApiError) -> Void)?
+    
+    #if DEBUG
+    deinit {
+        print("\(self) deinitializing")
+    }
+    #endif
 }

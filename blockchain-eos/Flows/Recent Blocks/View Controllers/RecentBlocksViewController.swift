@@ -53,7 +53,9 @@ final class RecentBlocksViewController: BaseViewController {
     }
     
     override func setUpBinding() {
-        self.viewModel.onError = { error in
+        self.viewModel.onError = { [weak self] error in
+            guard let `self` = self else { return }
+            
             DispatchQueue.main.async {
                 self.showMessage(title: NSLocalizedString("Error", comment: ""), message: error.message)
             }
